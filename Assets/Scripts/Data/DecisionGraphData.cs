@@ -6,4 +6,5 @@ public class DecisionGraphData
 {
     public string startNode;
     public List<DecisionNode> nodes;
+    public List<EndingData> endings;
 }

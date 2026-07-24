@@ -7,6 +7,11 @@ public class GameManager : MonoBehaviour
     public DecisionUIController uiController;
     public PendulumController pendulum;
     public ProgressBarController progressBar;
+    public GameOverUIController gameOverUI;
+
+    public GameObject optionsContainerRoot;
+    public GameObject pendulumRoot;
+    public GameObject progressBarRoot;
 
     public float deathApproachSpeed = 0.15f;
 
@@ -81,6 +86,14 @@ public class GameManager : MonoBehaviour
     private void TriggerGameOver(string reason)
     {
         isGameOver = true;
+
+        optionsContainerRoot.SetActive(false);
+        pendulumRoot.SetActive(false);
+        progressBarRoot.SetActive(false);
+
+        string endingText = graphLoader.Graph.GetEndingText(reason);
+        gameOverUI.ShowEnding(endingText);
+
         Debug.Log($"Game Over: {reason}");
     }
 }
