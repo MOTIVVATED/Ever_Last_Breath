@@ -1,0 +1,75 @@
+{
+  "startNode": "career_choice",
+  "nodes": [
+    {
+      "id": "career_choice",
+      "text": "Школа позади. Куда дальше?",
+      "options": [
+        { "label": "Надёжная офисная работа", "deathDelta": -1, "next": "family_early" },
+        { "label": "Творческий путь без гарантий", "deathDelta": 2, "next": "art_struggle" },
+        { "label": "Военная служба", "deathDelta": 1, "next": "duty_path" }
+      ]
+    },
+    {
+      "id": "family_early",
+      "text": "Рано создать семью или остаться свободным?",
+      "options": [
+        { "label": "Осесть, построить дом", "deathDelta": -1, "next": "stability" },
+        { "label": "Остаться в дороге", "deathDelta": 1, "next": "wandering" }
+      ]
+    },
+    {
+      "id": "art_struggle",
+      "text": "Признания нет, деньги заканчиваются.",
+      "options": [
+        { "label": "Продолжать несмотря ни на что", "deathDelta": 2, "ending": "legacy" },
+        { "label": "Сдаться, найти стабильную работу", "deathDelta": -1, "next": "stability" },
+        { "label": "Совмещать день и ночь", "deathDelta": 0, "next": "burnout" }
+      ]
+    },
+    {
+      "id": "duty_path",
+      "text": "Предлагают опасное задание.",
+      "options": [
+        { "label": "Вызваться добровольцем", "deathDelta": 3, "ending": "hero_death" },
+        { "label": "Остаться в тылу", "deathDelta": -1, "next": "stability" },
+        { "label": "Дезертировать", "deathDelta": 2, "next": "wandering" }
+      ]
+    },
+    {
+      "id": "stability",
+      "text": "Годы идут ровно. Что дальше со здоровьем и амбициями?",
+      "options": [
+        { "label": "Здоровый образ жизни", "deathDelta": -2, "next": "old_age" },
+        { "label": "Работать на износ ради успеха", "deathDelta": 2, "next": "burnout" },
+        { "label": "Жить в своё удовольствие без ограничений", "deathDelta": 3, "ending": "early_end" }
+      ]
+    },
+    {
+      "id": "wandering",
+      "text": "Дорога продолжается. Остановиться или идти дальше?",
+      "options": [
+        { "label": "Осесть в новом месте", "deathDelta": -1, "next": "old_age" },
+        { "label": "Идти, пока идётся", "deathDelta": 1, "ending": "wanderer_end" }
+      ]
+    },
+    {
+      "id": "burnout",
+      "text": "Тело и разум подают сигналы. Слушать их?",
+      "options": [
+        { "label": "Остановиться, отдохнуть", "deathDelta": -2, "next": "old_age" },
+        { "label": "Продолжать через силу", "deathDelta": 2, "ending": "collapse_end" }
+      ]
+    },
+    {
+      "id": "old_age",
+      "text": "Финал близок. Как встретить его?",
+      "options": [
+        { "label": "Принять всё как есть", "deathDelta": -3, "ending": "peaceful_end" },
+        { "label": "Сопротивляться до последнего", "deathDelta": 1, "ending": "defiant_end" },
+        { "label": "Найти кого-то из прошлого", "deathDelta": -1, "ending": "reconciled_end" },
+        { "label": "Молчать о сожалениях", "deathDelta": 0, "ending": "quiet_end" }
+      ]
+    }
+  ]
+}
