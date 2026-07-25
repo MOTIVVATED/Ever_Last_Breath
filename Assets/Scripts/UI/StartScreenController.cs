@@ -5,6 +5,8 @@ using TMPro;
 
 public class StartScreenController : MonoBehaviour
 {
+    public static bool IntroAlreadyShown = false;
+
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private GameObject continueHint;
     [SerializeField] private Button startButton;
@@ -24,6 +26,13 @@ public class StartScreenController : MonoBehaviour
 
     private void Start()
     {
+        if (IntroAlreadyShown)
+        {
+            panelRoot.SetActive(false);
+            gameManager.BeginGame();
+            return;
+        }
+
         startButton.gameObject.SetActive(false);
         startButton.onClick.AddListener(BeginGame);
         ShowLine(0);
@@ -56,6 +65,7 @@ public class StartScreenController : MonoBehaviour
 
     private void BeginGame()
     {
+        IntroAlreadyShown = true;
         panelRoot.SetActive(false);
         gameManager.BeginGame();
     }
