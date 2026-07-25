@@ -9,6 +9,7 @@ public class PendulumController : MonoBehaviour
     private float angle;
 
     public float NormalizedPosition => (angle + amplitude) / (2f * amplitude);
+    public float CurrentAngle => angle;
 
     private void Update()
     {
