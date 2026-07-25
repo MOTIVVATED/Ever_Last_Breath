@@ -1,13 +1,17 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
+    public event Action OnDecisionMade;
+
     public DecisionGraphLoader graphLoader;
     public DecisionUIController uiController;
     public PendulumController pendulum;
     public ProgressBarController progressBar;
     public GameOverUIController gameOverUI;
+    public Animator heroAnimator;
 
     public GameObject optionsContainerRoot;
     public GameObject pendulumRoot;
@@ -57,6 +61,7 @@ public class GameManager : MonoBehaviour
         deathPosition = 1f;
         progressBar.SetDeathPosition(1f);
         progressBar.SetHeroPosition(heroPosition);
+        PlayHeroState(node.heroState);
     }
 
     private void HandleDecision()
@@ -64,6 +69,8 @@ public class GameManager : MonoBehaviour
         int optionsCount = currentNode.options.Count;
         int index = Mathf.Clamp(Mathf.FloorToInt(pendulum.NormalizedPosition * optionsCount), 0, optionsCount - 1);
         DecisionOption option = currentNode.options[index];
+
+        OnDecisionMade?.Invoke();
 
         heroPosition = Mathf.Clamp01(heroPosition + option.deathDelta * deltaUnit);
 
@@ -89,11 +96,16 @@ public class GameManager : MonoBehaviour
 
         optionsContainerRoot.SetActive(false);
         pendulumRoot.SetActive(false);
-        progressBarRoot.SetActive(false);
 
         string endingText = graphLoader.Graph.GetEndingText(reason);
+        PlayHeroState(graphLoader.Graph.GetEndingHeroState(reason));
         gameOverUI.ShowEnding(endingText);
 
         Debug.Log($"Game Over: {reason}");
+    }
+
+    private void PlayHeroState(string heroState)
+    {
+        heroAnimator.Play("hero" + heroState);
     }
 }
