@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public GameObject optionsContainerRoot;
     public GameObject pendulumRoot;
     public GameObject progressBarRoot;
+    public GameObject decisionPanelRoot;
 
     public float deathApproachSpeed = 0.15f;
 
@@ -25,15 +26,36 @@ public class GameManager : MonoBehaviour
     private float heroPosition = 0f;
     private float deathPosition = 1f;
     private bool isGameOver = false;
+    private bool isGameStarted = false;
 
     private void Start()
     {
+        optionsContainerRoot.SetActive(false);
+        pendulumRoot.SetActive(false);
+        progressBarRoot.SetActive(false);
+        decisionPanelRoot.SetActive(false);
+    }
+
+    public void BeginGame()
+    {
+        isGameStarted = true;
+
+        optionsContainerRoot.SetActive(true);
+        pendulumRoot.SetActive(true);
+        progressBarRoot.SetActive(true);
+        decisionPanelRoot.SetActive(true);
+
         DecisionNode startNode = graphLoader.Graph.GetNode(graphLoader.Graph.StartNode);
         ShowNode(startNode);
     }
 
     private void Update()
     {
+        if (!isGameStarted)
+        {
+            return;
+        }
+
         if (isGameOver)
         {
             return;
