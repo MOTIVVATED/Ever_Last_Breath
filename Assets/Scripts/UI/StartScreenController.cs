@@ -20,20 +20,30 @@ public class StartScreenController : MonoBehaviour
     private string[] linesRu =
     {
         "Здравствуй. Ты уже знаешь, кто я.",
-        "Каждое мгновение — это шаг либо ко мне, либо от меня.",
+
+				"Люди совершают около 500 миллионов вдохов до встречи со мной.",
+        "Сколько вдохов осталось у тебя? Разве ты не считаешь их?",
+				"Не волнуйся, у меня всё подсчитано.",
+
+				"Как бы далеко ты не зашел, в конце тебя буду ждать только я.",
         "Слушай маятник. Когда он укажет на решение — нажми Пробел.",
-        "Промедлишь — и я подойду ближе. Каждый твой выбор отбрасывает меня назад.",
-        "Дыши, пока можешь. Начнём?"
+        "Промедлишь — и я подойду ближе. Твои решения могут отсрочить нашу встречу.",
+        "Начинай! Перед смертью не надышишься."
     };
 
     private string[] linesEn =
     {
         "Hello. You already know who I am.",
-        "Every moment is a step either toward me, or away from me.",
+
+				"Human beings take about 500 million breaths before meeting me.",
+				"How many breaths do you have left? Are not you counting down?",
+				"Do not worry, I am doing it.",
+
+				"No matter how far you go, only I will be waiting for you at the end.",
         "Listen to the pendulum. When it points to a decision — press Space.",
-        "Hesitate, and I get closer. Every choice you make pushes me back.",
-        "Breathe, while you still can. Shall we begin?"
-    };
+				"Hesitate, and I get closer. Your decisions can delay our meeting.",
+				"Begin! Anyway, you can never breathe enough just before you die."
+		};
 
     private const string ContinueHintRu = "Нажми Пробел, чтобы продолжить";
     private const string ContinueHintEn = "Press Space to continue";
