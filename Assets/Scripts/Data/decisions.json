@@ -4,7 +4,7 @@
         {
             "id": "childhood",
             "text": "Ты растёшь в семье, которая уже всё решила за тебя.",
-            "heroState": "Basic",
+            "heroState": "heroBasic",
             "options": [
                 {
                     "label": "Слушаться и соответствовать ожиданиям",
@@ -15,494 +15,321 @@
                     "label": "Спорить и настаивать на своём",
                     "deathDelta": 1,
                     "next": "rebellion"
+                },
+                {
+                    "label": "Расти обычным, ничем не выделяясь",
+                    "deathDelta": -1,
+                    "next": "family_1"
                 }
             ]
         },
         {
             "id": "obedience",
             "text": "Правила дают чувство защищённости. Но куда они ведут?",
-            "heroState": "Basic",
+            "heroState": "heroBasic",
             "options": [
                 {
                     "label": "Учиться изо всех сил, войти в систему",
                     "deathDelta": 1,
-                    "next": "school_pressure"
+                    "next": "school_crossroads"
                 },
                 {
                     "label": "Найти тихий бунт внутри правил",
                     "deathDelta": 0,
-                    "next": "quiet_defiance"
+                    "next": "suppressed_1"
+                },
+                {
+                    "label": "Рано открыть в себе тягу к творчеству",
+                    "deathDelta": 0,
+                    "next": "creative_crossroads"
                 }
             ]
         },
         {
             "id": "rebellion",
             "text": "Каждое несогласие отдаляет тебя от дома.",
-            "heroState": "Frustrated",
+            "heroState": "heroFrustrated",
             "options": [
                 {
                     "label": "Уйти из семьи раньше времени",
                     "deathDelta": 2,
-                    "next": "early_independence"
+                    "next": "home_1"
                 },
                 {
-                    "label": "Найти компромисс",
+                    "label": "Искать острых ощущений на грани закона",
+                    "deathDelta": 1,
+                    "next": "youth_edge"
+                },
+                {
+                    "label": "Искать утешения в вере, когда всё рушится",
                     "deathDelta": -1,
-                    "next": "quiet_defiance"
-                },
-                {
-                    "label": "Разорвать все связи",
-                    "deathDelta": 3,
-                    "next": "wandering"
+                    "next": "religion_1"
                 }
             ]
         },
         {
-            "id": "school_pressure",
+            "id": "school_crossroads",
             "text": "Школьные дни полны выбора, о котором никто не предупреждает.",
-            "heroState": "Focused",
+            "heroState": "heroFocused",
             "options": [
                 {
                     "label": "Списывать",
                     "deathDelta": 0,
-                    "next": "school_cheating"
+                    "next": "business_1"
                 },
                 {
                     "label": "Усердно учиться",
                     "deathDelta": -1,
-                    "next": "diligent_path"
+                    "next": "science_1"
                 },
                 {
                     "label": "Ввязываться в драки",
                     "deathDelta": 2,
-                    "next": "school_fights"
+                    "next": "sports_1"
                 },
                 {
                     "label": "Молча терпеть насмешки",
                     "deathDelta": 1,
-                    "next": "endure_mockery"
+                    "next": "suppressed_1"
                 }
             ]
         },
         {
-            "id": "quiet_defiance",
-            "text": "Ты научился молчать о том, что важно.",
-            "heroState": "Frustrated",
+            "id": "creative_crossroads",
+            "text": "Внутри рождается что-то, чему пока нет применения.",
+            "heroState": "heroFocused",
             "options": [
                 {
-                    "label": "Найти отдушину втайне ото всех",
+                    "label": "Игры, которые ты придумываешь сам",
                     "deathDelta": 0,
-                    "next": "career_choice"
+                    "next": "gd_1"
                 },
                 {
-                    "label": "Так и не показать себя настоящего",
-                    "deathDelta": 2,
-                    "next": "years_of_silence"
-                }
-            ]
-        },
-        {
-            "id": "early_independence",
-            "text": "Ты один раньше, чем был готов.",
-            "heroState": "Frustrated",
-            "options": [
-                {
-                    "label": "Начать жизнь с нуля где-то ещё",
-                    "deathDelta": 1,
-                    "next": "wandering"
-                },
-                {
-                    "label": "Быстро найти новую опору",
-                    "deathDelta": -1,
-                    "next": "family_early"
-                },
-                {
-                    "label": "Не справиться в одиночку",
-                    "deathDelta": 3,
-                    "next": "spiral_alone"
-                }
-            ]
-        },
-        {
-            "id": "career_choice",
-            "text": "Школа позади. Куда дальше?",
-            "heroState": "Focused",
-            "options": [
-                {
-                    "label": "Надёжная офисная работа",
-                    "deathDelta": -1,
-                    "next": "family_early"
-                },
-                {
-                    "label": "Творческий путь без гарантий",
-                    "deathDelta": 2,
-                    "next": "art_struggle"
-                },
-                {
-                    "label": "Война уже началась",
-                    "deathDelta": 1,
-                    "next": "war_begins"
-                }
-            ]
-        },
-        {
-            "id": "family_early",
-            "text": "Рано создать семью или остаться свободным?",
-            "heroState": "Basic",
-            "options": [
-                {
-                    "label": "Осесть, построить дом",
-                    "deathDelta": -1,
-                    "next": "stability"
-                },
-                {
-                    "label": "Остаться в дороге",
-                    "deathDelta": 1,
-                    "next": "wandering"
-                }
-            ]
-        },
-        {
-            "id": "art_struggle",
-            "text": "Признания нет, деньги заканчиваются.",
-            "heroState": "Frustrated",
-            "options": [
-                {
-                    "label": "Продолжать несмотря ни на что",
-                    "deathDelta": 2,
-                    "next": "art_edge"
-                },
-                {
-                    "label": "Сдаться, найти стабильную работу",
-                    "deathDelta": -1,
-                    "next": "stability"
-                },
-                {
-                    "label": "Совмещать день и ночь",
+                    "label": "Мелодии, что не отпускают",
                     "deathDelta": 0,
-                    "next": "burnout"
-                }
-            ]
-        },
-        {
-            "id": "duty_path",
-            "text": "Предлагают опасное задание.",
-            "heroState": "Focused",
-            "options": [
-                {
-                    "label": "Остаться в тылу, избегать боя",
-                    "deathDelta": -1,
-                    "next": "stability"
+                    "next": "music_1"
                 },
                 {
-                    "label": "Вызваться добровольцем на опасное задание",
-                    "deathDelta": 3,
-                    "ending": "hero_death"
-                },
-                {
-                    "label": "Дезертировать",
-                    "deathDelta": 2,
-                    "next": "wandering"
-                },
-                {
-                    "label": "Оказаться на передовой",
-                    "deathDelta": 1,
-                    "next": "frontline"
-                }
-            ]
-        },
-        {
-            "id": "stability",
-            "text": "Годы идут ровно. Что дальше со здоровьем и амбициями?",
-            "heroState": "Basic",
-            "options": [
-                {
-                    "label": "Здоровый образ жизни",
-                    "deathDelta": -2,
-                    "next": "old_age"
-                },
-                {
-                    "label": "Работать на износ ради успеха",
-                    "deathDelta": 2,
-                    "next": "burnout"
-                },
-                {
-                    "label": "Жить в своё удовольствие без ограничений",
-                    "deathDelta": 3,
-                    "ending": "early_end"
-                }
-            ]
-        },
-        {
-            "id": "wandering",
-            "text": "Дорога продолжается. Остановиться или идти дальше?",
-            "heroState": "Focused",
-            "options": [
-                {
-                    "label": "Осесть в новом месте",
-                    "deathDelta": -1,
-                    "next": "old_age"
-                },
-                {
-                    "label": "Идти, пока идётся",
-                    "deathDelta": 1,
-                    "next": "endless_road"
-                }
-            ]
-        },
-        {
-            "id": "burnout",
-            "text": "Тело и разум подают сигналы. Слушать их?",
-            "heroState": "Crying",
-            "options": [
-                {
-                    "label": "Остановиться, отдохнуть",
-                    "deathDelta": -2,
-                    "next": "old_age"
-                },
-                {
-                    "label": "Продолжать через силу",
-                    "deathDelta": 2,
-                    "ending": "collapse_end"
-                }
-            ]
-        },
-        {
-            "id": "old_age",
-            "text": "Финал близок. Как встретить его?",
-            "heroState": "Crying",
-            "options": [
-                {
-                    "label": "Принять всё как есть",
-                    "deathDelta": -3,
-                    "next": "peaceful_departure"
-                },
-                {
-                    "label": "Сопротивляться до последнего",
-                    "deathDelta": 1,
-                    "next": "final_fight"
-                },
-                {
-                    "label": "Найти кого-то из прошлого",
-                    "deathDelta": -1,
-                    "next": "reunion_moment"
-                },
-                {
-                    "label": "Молчать о сожалениях",
+                    "label": "Кадры, которые складываются в голове",
                     "deathDelta": 0,
-                    "next": "silent_fading"
+                    "next": "cinema_1"
+                },
+                {
+                    "label": "Истории, которые просятся на бумагу",
+                    "deathDelta": 0,
+                    "next": "lit_1"
                 }
             ]
         },
         {
-            "id": "school_cheating",
-            "text": "Списывать стало привычкой. Что дальше?",
-            "heroState": "Frustrated",
+            "id": "youth_edge",
+            "text": "Грань закона манит тех, кому нечего терять.",
+            "heroState": "heroFrustrated",
             "options": [
-                {
-                    "label": "Довести до автоматизма, обмануть систему полностью",
-                    "deathDelta": 1,
-                    "next": "shortcut_cynicism"
-                },
-                {
-                    "label": "Испугаться и начать учиться по-настоящему",
-                    "deathDelta": -1,
-                    "next": "diligent_path"
-                }
-            ]
-        },
-        {
-            "id": "shortcut_cynicism",
-            "text": "Обман стал твоим главным инструментом.",
-            "heroState": "Frustrated",
-            "options": [
-                {
-                    "label": "Использовать это в бизнесе",
-                    "deathDelta": 1,
-                    "next": "business_intro"
-                },
-                {
-                    "label": "Использовать это в политике",
-                    "deathDelta": 1,
-                    "next": "political_intro"
-                },
                 {
                     "label": "Пойти на настоящее преступление",
-                    "deathDelta": 3,
-                    "next": "criminal_path"
-                }
-            ]
-        },
-        {
-            "id": "diligent_path",
-            "text": "Прилежность открывает двери. Но какие именно?",
-            "heroState": "Focused",
-            "options": [
-                {
-                    "label": "Пойти в политику",
-                    "deathDelta": -1,
-                    "next": "political_intro"
-                },
-                {
-                    "label": "Пойти в бизнес",
-                    "deathDelta": 1,
-                    "next": "business_intro"
-                },
-                {
-                    "label": "Посвятить себя науке",
-                    "deathDelta": -1,
-                    "next": "science_intro"
-                },
-                {
-                    "label": "Выбрать простую стабильную работу",
-                    "deathDelta": -1,
-                    "next": "family_early"
-                }
-            ]
-        },
-        {
-            "id": "school_fights",
-            "text": "Драки становятся способом говорить.",
-            "heroState": "Frustrated",
-            "options": [
-                {
-                    "label": "Направить агрессию в спорт",
-                    "deathDelta": -1,
-                    "next": "sports_intro"
-                },
-                {
-                    "label": "Продолжать драться, набирать врагов",
                     "deathDelta": 2,
-                    "next": "criminal_path"
+                    "next": "criminal_1"
                 },
                 {
-                    "label": "Тебя отчисляют",
+                    "label": "Уйти на фронт добровольцем, слишком молодым для этого",
                     "deathDelta": 1,
-                    "next": "early_independence"
+                    "next": "war_1"
+                },
+                {
+                    "label": "Оказаться за решёткой из-за одной рискованной ночи",
+                    "deathDelta": 2,
+                    "next": "prison_1"
                 }
             ]
         },
         {
-            "id": "endure_mockery",
-            "text": "Насмешки оставляют следы, которые не видно снаружи.",
-            "heroState": "Crying",
+            "id": "suppressed_1",
+            "text": "Молчание становится твоим самым частым словом.",
+            "heroState": "heroFrustrated",
             "options": [
                 {
-                    "label": "Замкнуться и найти отдушину в творчестве",
+                    "label": "Найти тайную отдушину, о которой никто не узнает",
                     "deathDelta": 0,
-                    "next": "art_struggle"
+                    "next": "suppressed_hobby"
                 },
                 {
-                    "label": "Научиться быть невидимым",
-                    "deathDelta": -1,
-                    "next": "quiet_defiance"
-                },
-                {
-                    "label": "Однажды не выдержать и сорваться",
+                    "label": "Постепенно перестать чувствовать хоть что-то",
                     "deathDelta": 2,
-                    "next": "school_fights"
+                    "next": "suppressed_numb"
                 }
             ]
         },
         {
-            "id": "criminal_path",
+            "id": "suppressed_hobby",
+            "text": "Тайная жизнь становится единственной настоящей.",
+            "heroState": "heroCrying",
+            "options": [
+                {
+                    "label": "Хранить это в себе до самого конца",
+                    "deathDelta": -1,
+                    "ending": "suppressed_kept_end"
+                },
+                {
+                    "label": "Однажды позволить кому-то увидеть настоящего себя",
+                    "deathDelta": -2,
+                    "ending": "suppressed_seen_end"
+                }
+            ]
+        },
+        {
+            "id": "suppressed_numb",
+            "text": "Чувствовать стало слишком больно, поэтому ты перестал.",
+            "heroState": "heroCrying",
+            "options": [
+                {
+                    "label": "Дожить остаток дней в стороне от всех",
+                    "deathDelta": 1,
+                    "ending": "suppressed_faded_end"
+                },
+                {
+                    "label": "Направить пустоту в жажду власти",
+                    "deathDelta": 1,
+                    "next": "political_1"
+                },
+                {
+                    "label": "Искать облегчения в вере",
+                    "deathDelta": -1,
+                    "next": "religion_1"
+                }
+            ]
+        },
+        {
+            "id": "home_1",
+            "text": "Дом остался позади. Дорога впереди.",
+            "heroState": "heroFocused",
+            "options": [
+                {
+                    "label": "Искать случайные заработки",
+                    "deathDelta": 0,
+                    "next": "home_labor"
+                },
+                {
+                    "label": "Полностью довериться дороге",
+                    "deathDelta": 1,
+                    "next": "home_road"
+                }
+            ]
+        },
+        {
+            "id": "home_labor",
+            "text": "Случайная работа не даёт ни денег, ни корней.",
+            "heroState": "heroFrustrated",
+            "options": [
+                {
+                    "label": "Продолжать держаться на плаву",
+                    "deathDelta": 1,
+                    "ending": "home_exhaust_end"
+                },
+                {
+                    "label": "Начать записывать истории о людях, которых встречаешь",
+                    "deathDelta": -1,
+                    "next": "lit_1"
+                },
+                {
+                    "label": "Начать сочинять мелодии от скуки в переходах",
+                    "deathDelta": -1,
+                    "next": "music_1"
+                },
+                {
+                    "label": "Использовать уличную смекалку для карьеры во власти",
+                    "deathDelta": 1,
+                    "next": "political_1"
+                }
+            ]
+        },
+        {
+            "id": "home_road",
+            "text": "Города меняются, лица меняются. Дом так и не появляется.",
+            "heroState": "heroFocused",
+            "options": [
+                {
+                    "label": "Замёрзнуть однажды под открытым небом",
+                    "deathDelta": 2,
+                    "ending": "home_freeze_end"
+                },
+                {
+                    "label": "Придумывать целые миры, чтобы не сойти с ума",
+                    "deathDelta": -1,
+                    "next": "gd_1"
+                },
+                {
+                    "label": "Снимать происходящее на случайную камеру, находя в этом смысл",
+                    "deathDelta": -1,
+                    "next": "cinema_1"
+                },
+                {
+                    "label": "Использовать харизму бродяги, чтобы однажды войти во власть",
+                    "deathDelta": 1,
+                    "next": "political_1"
+                }
+            ]
+        },
+        {
+            "id": "criminal_1",
             "text": "Преступление становится образом жизни.",
-            "heroState": "Frustrated",
+            "heroState": "heroFrustrated",
             "options": [
                 {
-                    "label": "Продолжать, пока не поймают",
-                    "deathDelta": 2,
-                    "next": "prison_intro"
-                },
-                {
-                    "label": "Успеть скрыться, начать новую жизнь",
+                    "label": "Работать в одиночку, по мелочи",
                     "deathDelta": 0,
-                    "next": "wandering"
-                }
-            ]
-        },
-        {
-            "id": "war_begins",
-            "text": "Война меняет правила игры для всех.",
-            "heroState": "Focused",
-            "options": [
+                    "next": "criminal_lone"
+                },
                 {
-                    "label": "Пойти служить",
+                    "label": "Войти в организованную группу",
                     "deathDelta": 1,
-                    "next": "duty_path"
-                },
-                {
-                    "label": "Эмигрировать, начать всё заново",
-                    "deathDelta": -1,
-                    "next": "emigration_intro"
-                },
-                {
-                    "label": "Отказаться служить и скрываться",
-                    "deathDelta": 2,
-                    "next": "prison_intro"
+                    "next": "criminal_gang"
                 }
             ]
         },
         {
-            "id": "emigration_intro",
-            "text": "Новая страна не спешит принимать тебя.",
-            "heroState": "Frustrated",
+            "id": "criminal_lone",
+            "text": "Мелкие дела не приносят большого улова — только большой риск.",
+            "heroState": "heroFrustrated",
             "options": [
                 {
-                    "label": "Остаться без денег, выживать день за днём",
+                    "label": "Довериться удаче ещё раз",
                     "deathDelta": 2,
-                    "next": "emigration_poverty"
+                    "ending": "criminal_caught_end"
                 },
                 {
-                    "label": "Заняться нелегальным заработком",
-                    "deathDelta": 2,
-                    "next": "criminal_path"
-                },
+                    "label": "Легализовать заработанное через своё дело",
+                    "deathDelta": -1,
+                    "next": "business_1"
+                }
+            ]
+        },
+        {
+            "id": "criminal_gang",
+            "text": "Группа даёт защиту, но забирает верность целиком.",
+            "heroState": "heroFrustrated",
+            "options": [
                 {
-                    "label": "Найти унизительную, но стабильную работу без документов",
+                    "label": "Подняться до самого верха",
                     "deathDelta": 1,
-                    "next": "emigration_labor"
-                }
-            ]
-        },
-        {
-            "id": "emigration_poverty",
-            "text": "Голод не спрашивает о гордости.",
-            "heroState": "Crying",
-            "options": [
-                {
-                    "label": "Принять помощь, начать заново с нуля",
-                    "deathDelta": -1,
-                    "ending": "second_life_end"
+                    "ending": "criminal_boss_end"
                 },
                 {
-                    "label": "Не выдержать и вернуться домой любой ценой",
+                    "label": "Отмыть деньги через настоящий бизнес",
+                    "deathDelta": -1,
+                    "next": "business_1"
+                },
+                {
+                    "label": "Использовать связи преступного мира для легальной власти",
                     "deathDelta": 1,
-                    "next": "prison_intro"
+                    "next": "political_1"
                 }
             ]
         },
         {
-            "id": "emigration_labor",
-            "text": "Работа без статуса не даёт прав, только обязанности.",
-            "heroState": "Frustrated",
-            "options": [
-                {
-                    "label": "Годами терпеть, чтобы однажды получить документы",
-                    "deathDelta": -1,
-                    "ending": "legalized_end"
-                },
-                {
-                    "label": "Сломаться под гнётом эксплуатации",
-                    "deathDelta": 2,
-                    "ending": "exploited_end"
-                }
-            ]
-        },
-        {
-            "id": "prison_intro",
+            "id": "prison_1",
             "text": "Стены решают, кем ты станешь дальше.",
-            "heroState": "Frustrated",
+            "heroState": "prisonFrustrated",
             "options": [
                 {
                     "label": "Сотрудничать с администрацией",
@@ -510,264 +337,260 @@
                     "next": "prison_cooperate"
                 },
                 {
-                    "label": "Терпеть побои молча",
+                    "label": "Терпеть молча",
                     "deathDelta": 2,
                     "next": "prison_endure"
                 },
                 {
                     "label": "Найти соучастников для побега",
                     "deathDelta": 1,
-                    "next": "prison_escape_plan"
+                    "next": "prison_escape"
+                },
+                {
+                    "label": "Отправиться на войну ради сокращения срока",
+                    "deathDelta": -1,
+                    "next": "war_1"
                 }
             ]
         },
         {
             "id": "prison_cooperate",
             "text": "Сотрудничество открывает дверь пораньше.",
-            "heroState": "Focused",
+            "heroState": "prisonFocused",
             "options": [
                 {
-                    "label": "Выйти раньше и продолжить жизнь на воле",
+                    "label": "Выйти раньше и попытаться жить иначе",
                     "deathDelta": -2,
-                    "next": "stability"
+                    "ending": "prison_free_end"
                 },
                 {
-                    "label": "Стать доносчиком навсегда, потерять уважение всех",
+                    "label": "Стать доносчиком навсегда",
                     "deathDelta": 1,
-                    "ending": "informer_end"
+                    "ending": "prison_informer_end"
                 }
             ]
         },
         {
             "id": "prison_endure",
             "text": "Каждый день здесь стирает что-то в тебе.",
-            "heroState": "Crying",
+            "heroState": "prisonCrying",
             "options": [
                 {
                     "label": "Выйти сломленным, но живым",
                     "deathDelta": 1,
-                    "next": "stability"
+                    "ending": "prison_broken_end"
                 },
                 {
                     "label": "Не пережить очередной день",
                     "deathDelta": 3,
-                    "ending": "collapse_end"
+                    "ending": "prison_collapse_end"
                 }
             ]
         },
         {
-            "id": "prison_escape_plan",
+            "id": "prison_escape",
             "text": "План побега готов. Лес ждёт по ту сторону забора.",
-            "heroState": "Frustrated",
+            "heroState": "prisonFrustrated",
             "options": [
                 {
-                    "label": "Бежать и скрыться в лесу вдвоём",
+                    "label": "Бежать и скрыться в лесу",
                     "deathDelta": 2,
-                    "next": "forest_escape"
+                    "next": "prison_forest"
                 },
                 {
-                    "label": "Отказаться в последний момент, остаться",
+                    "label": "Отказаться в последний момент",
                     "deathDelta": -1,
                     "next": "prison_endure"
                 }
             ]
         },
         {
-            "id": "forest_escape",
+            "id": "prison_forest",
             "text": "Еда заканчивается быстрее, чем надежда.",
-            "heroState": "Crying",
+            "heroState": "prisonCrying",
             "options": [
                 {
                     "label": "Действовать сообща, делить последнее поровну",
                     "deathDelta": -1,
-                    "ending": "survivors_end"
+                    "ending": "prison_survivors_end"
                 },
                 {
                     "label": "Пойти на немыслимое, чтобы выжить",
                     "deathDelta": 3,
-                    "ending": "cannibal_end"
+                    "ending": "prison_cannibal_end"
+                },
+                {
+                    "label": "Искать искупления в вере после пережитого",
+                    "deathDelta": -1,
+                    "next": "religion_1"
                 }
             ]
         },
         {
-            "id": "frontline",
+            "id": "war_1",
+            "text": "Война меняет правила игры для всех.",
+            "heroState": "warFocused",
+            "options": [
+                {
+                    "label": "Пойти служить в тылу",
+                    "deathDelta": -1,
+                    "next": "war_support"
+                },
+                {
+                    "label": "Проситься сразу на передовую",
+                    "deathDelta": 1,
+                    "next": "war_frontline"
+                },
+                {
+                    "label": "Эмигрировать вместо службы",
+                    "deathDelta": -1,
+                    "next": "emigration_1"
+                },
+                {
+                    "label": "Использовать хаос войны, чтобы дорваться до власти",
+                    "deathDelta": 1,
+                    "next": "political_1"
+                }
+            ]
+        },
+        {
+            "id": "war_support",
+            "text": "Тыл безопаснее, но совесть не даёт покоя.",
+            "heroState": "warFocused",
+            "options": [
+                {
+                    "label": "Остаться здесь до конца войны",
+                    "deathDelta": -1,
+                    "ending": "war_support_end"
+                },
+                {
+                    "label": "Всё же попроситься на фронт",
+                    "deathDelta": 1,
+                    "next": "war_frontline"
+                }
+            ]
+        },
+        {
+            "id": "war_frontline",
             "text": "Передовая не оставляет времени на раздумья.",
-            "heroState": "Focused",
+            "heroState": "warFocused",
             "options": [
                 {
                     "label": "Спасти раненого товарища под огнём",
                     "deathDelta": 1,
-                    "next": "wounded_rescue"
+                    "next": "war_rescue"
                 },
                 {
                     "label": "Ослушаться приказа",
                     "deathDelta": 2,
-                    "next": "disobey_order"
+                    "next": "war_disobey"
                 },
                 {
                     "label": "Сражаться храбро и безжалостно",
                     "deathDelta": 1,
-                    "next": "brutal_combat"
+                    "next": "war_brutal"
                 }
             ]
         },
         {
-            "id": "wounded_rescue",
+            "id": "war_rescue",
             "text": "Ты тащишь товарища под огнём. Каждый шаг может стать последним.",
-            "heroState": "Focused",
+            "heroState": "warFocused",
             "options": [
                 {
-                    "label": "Донести его живым, вопреки всему",
+                    "label": "Донести его живым",
                     "deathDelta": -1,
-                    "next": "war_aftermath"
+                    "ending": "war_hero_end"
                 },
                 {
                     "label": "Погибнуть, не успев дотащить",
                     "deathDelta": 3,
-                    "ending": "hero_death"
+                    "ending": "war_fallen_end"
                 }
             ]
         },
         {
-            "id": "disobey_order",
+            "id": "war_disobey",
             "text": "Приказ противоречит всему, во что ты веришь.",
-            "heroState": "Frustrated",
+            "heroState": "warFrustrated",
             "options": [
                 {
                     "label": "Ослушаться и спасти невиновных",
                     "deathDelta": -1,
-                    "next": "war_aftermath"
+                    "ending": "war_conscience_end"
                 },
                 {
-                    "label": "Ослушаться и попасть под трибунал",
+                    "label": "Попасть под трибунал",
                     "deathDelta": 2,
-                    "next": "prison_intro"
+                    "ending": "war_court_end"
                 }
             ]
         },
         {
-            "id": "brutal_combat",
+            "id": "war_brutal",
             "text": "Ты сражаешься так, что вопросы морали умолкают.",
-            "heroState": "Frustrated",
+            "heroState": "warFrustrated",
             "options": [
                 {
                     "label": "Победить любой ценой, потеряв часть себя",
                     "deathDelta": 1,
-                    "next": "lost_humanity"
+                    "next": "war_lost_humanity"
                 },
                 {
                     "label": "В последний момент удержать в себе человека",
                     "deathDelta": -1,
-                    "next": "war_aftermath"
+                    "ending": "war_conscience_end"
                 }
             ]
         },
         {
-            "id": "lost_humanity",
+            "id": "war_lost_humanity",
             "text": "Ты вернёшься другим человеком, если вообще вернёшься.",
-            "heroState": "Crying",
+            "heroState": "warCrying",
             "options": [
                 {
                     "label": "Дожить до возвращения домой",
                     "deathDelta": -1,
-                    "next": "ptsd_return"
+                    "next": "war_ptsd"
                 },
                 {
                     "label": "Не пережить того, кем стал",
                     "deathDelta": 2,
-                    "ending": "collapse_end"
+                    "ending": "war_collapse_end"
                 }
             ]
         },
         {
-            "id": "ptsd_return",
+            "id": "war_ptsd",
             "text": "Дом тот же. Ты — нет.",
-            "heroState": "Crying",
+            "heroState": "warCrying",
             "options": [
                 {
                     "label": "Искать помощь, говорить о пережитом",
                     "deathDelta": -2,
-                    "next": "old_age"
+                    "ending": "war_healed_end"
                 },
                 {
                     "label": "Молчать и нести это в одиночку",
                     "deathDelta": 1,
-                    "ending": "silent_veteran_end"
-                }
-            ]
-        },
-        {
-            "id": "war_aftermath",
-            "text": "Ты выжил. Что война оставила в тебе?",
-            "heroState": "Focused",
-            "options": [
-                {
-                    "label": "Вернуться к обычной жизни, будто ничего не было",
-                    "deathDelta": -1,
-                    "next": "stability"
+                    "ending": "war_silent_end"
                 },
                 {
-                    "label": "Осознать, что прежней жизни больше нет",
-                    "deathDelta": 1,
-                    "next": "ptsd_return"
-                }
-            ]
-        },
-        {
-            "id": "political_intro",
-            "text": "Власть открывает двери, которые не откроются иначе.",
-            "heroState": "Focused",
-            "options": [
-                {
-                    "label": "Использовать положение ради своей выгоды",
-                    "deathDelta": 1,
-                    "next": "political_power"
+                    "label": "Искать спасения в вере",
+                    "deathDelta": -1,
+                    "next": "religion_1"
                 },
                 {
-                    "label": "Служить людям, даже когда это невыгодно",
+                    "label": "Выразить пережитое через искусство",
                     "deathDelta": -1,
-                    "next": "political_service"
+                    "next": "war_art_expression"
                 }
             ]
         },
         {
-            "id": "political_power",
-            "text": "Каждое решение теперь вершит чужие судьбы.",
-            "heroState": "Frustrated",
-            "options": [
-                {
-                    "label": "Пойти на сделку с совестью ради величия",
-                    "deathDelta": 1,
-                    "ending": "power_end"
-                },
-                {
-                    "label": "Однажды потерять всё, построенное на лжи",
-                    "deathDelta": 2,
-                    "ending": "fallen_end"
-                }
-            ]
-        },
-        {
-            "id": "political_service",
-            "text": "Признания меньше, чем у тех, кто предал принципы.",
-            "heroState": "Basic",
-            "options": [
-                {
-                    "label": "Остаться верным до конца, несмотря на цену",
-                    "deathDelta": -1,
-                    "ending": "legacy"
-                },
-                {
-                    "label": "Устать и уйти из политики",
-                    "deathDelta": -1,
-                    "next": "stability"
-                }
-            ]
-        },
-        {
-            "id": "business_intro",
+            "id": "business_1",
             "text": "Деньги решают быстрее, чем принципы.",
-            "heroState": "Focused",
+            "heroState": "businessFocused",
             "options": [
                 {
                     "label": "Построить империю, не считаясь с ценой",
@@ -777,48 +600,170 @@
                 {
                     "label": "Вести дело честно, медленно",
                     "deathDelta": -1,
-                    "next": "stability"
+                    "next": "business_honest"
+                },
+                {
+                    "label": "Использовать капитал, чтобы купить власть",
+                    "deathDelta": 1,
+                    "next": "political_1"
                 }
             ]
         },
         {
             "id": "business_empire",
             "text": "Успех растёт, а вместе с ним — одиночество.",
-            "heroState": "Frustrated",
+            "heroState": "businessFrustrated",
             "options": [
                 {
                     "label": "Променять всё личное на успех",
                     "deathDelta": 2,
-                    "ending": "soulless_end"
+                    "ending": "business_soulless_end"
                 },
                 {
                     "label": "Остановиться, пока не потерял себя",
                     "deathDelta": -1,
-                    "next": "stability"
+                    "next": "business_honest"
                 }
             ]
         },
         {
-            "id": "science_intro",
-            "text": "Наука не обещает признания, только истину.",
-            "heroState": "Focused",
+            "id": "business_honest",
+            "text": "Дело растёт медленно, но держится на доверии.",
+            "heroState": "businessFocused",
             "options": [
                 {
-                    "label": "Посвятить жизнь труду, который поймут позже",
+                    "label": "Передать дело детям, состарившись у руля",
                     "deathDelta": -1,
-                    "ending": "legacy"
+                    "ending": "business_legacy_end"
                 },
                 {
-                    "label": "Бросить науку ради практического успеха",
-                    "deathDelta": 1,
-                    "next": "business_intro"
+                    "label": "Потерять всё в один плохой год",
+                    "deathDelta": 2,
+                    "ending": "business_ruin_end"
+                },
+                {
+                    "label": "Заняться нелегальными схемами, чтобы отыграться",
+                    "deathDelta": 2,
+                    "next": "criminal_1"
                 }
             ]
         },
         {
-            "id": "sports_intro",
+            "id": "political_1",
+            "text": "Предательство своих принципов открывает двери, которые не откроются иначе.",
+            "heroState": "powerFocused",
+            "options": [
+                {
+                    "label": "Идти до конца, чего бы это ни стоило",
+                    "deathDelta": 1,
+                    "next": "political_power"
+                },
+                {
+                    "label": "Сохранить видимость принципов напоказ",
+                    "deathDelta": 0,
+                    "next": "political_facade"
+                }
+            ]
+        },
+        {
+            "id": "political_power",
+            "text": "Каждое решение теперь вершит чужие судьбы.",
+            "heroState": "powerFrustrated",
+            "options": [
+                {
+                    "label": "Пойти на сделку с совестью ради величия",
+                    "deathDelta": 1,
+                    "ending": "political_zenith_end"
+                },
+                {
+                    "label": "Однажды потерять всё, построенное на лжи",
+                    "deathDelta": 2,
+                    "ending": "political_fallen_end"
+                }
+            ]
+        },
+        {
+            "id": "political_facade",
+            "text": "Маска принципиальности держится, пока её не проверяют всерьёз.",
+            "heroState": "powerFocused",
+            "options": [
+                {
+                    "label": "Пройти проверку, поступившись малым",
+                    "deathDelta": 0,
+                    "ending": "political_survivor_end"
+                },
+                {
+                    "label": "Быть разоблачённым публично",
+                    "deathDelta": 2,
+                    "ending": "political_exposed_end"
+                }
+            ]
+        },
+        {
+            "id": "science_1",
+            "text": "Наука не обещает признания, только истину.",
+            "heroState": "heroFocused",
+            "options": [
+                {
+                    "label": "Посвятить жизнь фундаментальному труду, который поймут позже",
+                    "deathDelta": -1,
+                    "next": "science_dedication"
+                },
+                {
+                    "label": "Искать быстрый практический успех",
+                    "deathDelta": 1,
+                    "next": "science_practical"
+                },
+                {
+                    "label": "Продать открытие тому, кто предложит власть",
+                    "deathDelta": 1,
+                    "next": "political_1"
+                }
+            ]
+        },
+        {
+            "id": "science_dedication",
+            "text": "Лаборатория становится домом больше, чем сам дом.",
+            "heroState": "heroFocused",
+            "options": [
+                {
+                    "label": "Закончить труд, даже если на это уйдёт вся жизнь",
+                    "deathDelta": -1,
+                    "ending": "science_legacy_end"
+                },
+                {
+                    "label": "Сгореть на полпути, не успев закончить",
+                    "deathDelta": 2,
+                    "ending": "science_unfinished_end"
+                }
+            ]
+        },
+        {
+            "id": "science_practical",
+            "text": "Прикладная выгода приходит быстрее, чем истина.",
+            "heroState": "heroFrustrated",
+            "options": [
+                {
+                    "label": "Разбогатеть на своём открытии",
+                    "deathDelta": -1,
+                    "ending": "science_wealthy_end"
+                },
+                {
+                    "label": "Обнаружить, что открытие использовали не так, как ты хотел",
+                    "deathDelta": 2,
+                    "ending": "science_regret_end"
+                },
+                {
+                    "label": "Искать искупления в вере",
+                    "deathDelta": -1,
+                    "next": "religion_1"
+                }
+            ]
+        },
+        {
+            "id": "sports_1",
             "text": "Тело становится инструментом, а рекорды — целью.",
-            "heroState": "Focused",
+            "heroState": "heroFocused",
             "options": [
                 {
                     "label": "Добиться успеха на пределе сил",
@@ -835,12 +780,12 @@
         {
             "id": "sports_success",
             "text": "Победы приносят славу, но она недолговечна.",
-            "heroState": "Basic",
+            "heroState": "heroBasic",
             "options": [
                 {
                     "label": "Уйти на пике, стать тренером",
                     "deathDelta": -1,
-                    "next": "coaching_path"
+                    "next": "sports_coach"
                 },
                 {
                     "label": "Держаться за славу дольше, чем стоит",
@@ -852,355 +797,900 @@
         {
             "id": "sports_injury",
             "text": "Тело больше не слушается так, как раньше.",
-            "heroState": "Crying",
+            "heroState": "heroCrying",
             "options": [
                 {
                     "label": "Найти новый смысл вне спорта",
                     "deathDelta": -1,
-                    "next": "coaching_path"
+                    "next": "sports_coach"
                 },
                 {
                     "label": "Не справиться с потерей себя прежнего",
                     "deathDelta": 2,
-                    "next": "coach_drinking"
+                    "ending": "sports_drink_end"
                 }
             ]
         },
         {
-            "id": "coaching_path",
+            "id": "sports_coach",
             "text": "Теперь ты передаёшь то, что умеешь, другим.",
-            "heroState": "Basic",
+            "heroState": "heroBasic",
             "options": [
                 {
                     "label": "Воспитать учеников, которые пойдут дальше тебя",
                     "deathDelta": -2,
-                    "ending": "mentor_end"
+                    "ending": "sports_mentor_end"
                 },
                 {
                     "label": "Спиться от невостребованности",
                     "deathDelta": 2,
-                    "next": "coach_drinking"
-                }
-            ]
-        },
-        {
-            "id": "coach_drinking",
-            "text": "Бутылка обещает забыть то, что спорт больше не даёт почувствовать.",
-            "heroState": "Crying",
-            "options": [
-                {
-                    "label": "Найти в себе силы остановиться",
-                    "deathDelta": -2,
-                    "next": "old_age"
+                    "ending": "sports_drink_end"
                 },
                 {
-                    "label": "Не остановиться",
-                    "deathDelta": 2,
-                    "ending": "addiction_end"
-                }
-            ]
-        },
-        {
-            "id": "art_edge",
-            "text": "Талант растёт, но растёт и цена, которую ты платишь за вдохновение.",
-            "heroState": "Frustrated",
-            "options": [
-                {
-                    "label": "Искать вдохновение в саморазрушении",
-                    "deathDelta": 2,
-                    "next": "art_addiction"
+                    "label": "Использовать бывшую славу, чтобы пойти в политику",
+                    "deathDelta": 1,
+                    "next": "political_1"
                 },
                 {
-                    "label": "Найти дисциплину, беречь себя ради искусства",
+                    "label": "Найти утешение в вере вместо бутылки",
                     "deathDelta": -1,
-                    "next": "art_legend"
+                    "next": "religion_1"
                 }
             ]
         },
         {
-            "id": "art_addiction",
-            "text": "Наркотики обещают то, что реальность не может дать.",
-            "heroState": "Crying",
+            "id": "family_1",
+            "text": "Обычная жизнь тоже требует выбора, просто более тихого.",
+            "heroState": "heroBasic",
             "options": [
                 {
-                    "label": "Не справиться с переживаниями и уйти рано",
+                    "label": "Строить дом и растить детей",
+                    "deathDelta": -1,
+                    "next": "family_home"
+                },
+                {
+                    "label": "Искать большее, не удовлетворяясь малым",
+                    "deathDelta": 1,
+                    "next": "family_restless"
+                }
+            ]
+        },
+        {
+            "id": "family_home",
+            "text": "Годы проходят ровно, отмеченные не событиями, а привычками.",
+            "heroState": "heroBasic",
+            "options": [
+                {
+                    "label": "Состариться в кругу тех, кого любишь",
+                    "deathDelta": -2,
+                    "ending": "family_peaceful_end"
+                },
+                {
+                    "label": "Однажды понять, что упустил себя самого",
+                    "deathDelta": 1,
+                    "ending": "family_lost_self_end"
+                }
+            ]
+        },
+        {
+            "id": "family_restless",
+            "text": "Обычная жизнь начинает казаться тесной.",
+            "heroState": "heroFrustrated",
+            "options": [
+                {
+                    "label": "Сбежать от рутины слишком поздно, чтобы начать заново",
+                    "deathDelta": 2,
+                    "ending": "family_regret_end"
+                },
+                {
+                    "label": "Найти смысл в детях, а не в себе",
+                    "deathDelta": -1,
+                    "ending": "family_peaceful_end"
+                },
+                {
+                    "label": "Искать признания за пределами семьи, во власти",
+                    "deathDelta": 1,
+                    "next": "political_1"
+                },
+                {
+                    "label": "Искать смысл в вере, а не в мирском",
+                    "deathDelta": -1,
+                    "next": "religion_1"
+                }
+            ]
+        },
+        {
+            "id": "religion_1",
+            "text": "Вера обещает смысл там, где его больше не видно.",
+            "heroState": "heroFocused",
+            "options": [
+                {
+                    "label": "Отдаться вере полностью",
+                    "deathDelta": -1,
+                    "next": "religion_devout"
+                },
+                {
+                    "label": "Использовать веру как утешение, не более",
+                    "deathDelta": 0,
+                    "next": "religion_casual"
+                }
+            ]
+        },
+        {
+            "id": "religion_devout",
+            "text": "Служение поглощает всё, что было твоим прежде.",
+            "heroState": "heroFocused",
+            "options": [
+                {
+                    "label": "Посвятить жизнь служению другим",
+                    "deathDelta": -2,
+                    "ending": "religion_saint_end"
+                },
+                {
+                    "label": "Обнаружить, что вера не спасает от сомнений",
+                    "deathDelta": 1,
+                    "ending": "religion_doubt_end"
+                },
+                {
+                    "label": "Превратить веру в инструмент влияния над людьми",
+                    "deathDelta": 1,
+                    "next": "political_1"
+                }
+            ]
+        },
+        {
+            "id": "religion_casual",
+            "text": "Вера остаётся рядом, но не определяет тебя целиком.",
+            "heroState": "heroBasic",
+            "options": [
+                {
+                    "label": "Найти покой в простых ритуалах",
+                    "deathDelta": -1,
+                    "ending": "religion_peace_end"
+                },
+                {
+                    "label": "Потерять веру насовсем, когда она понадобилась больше всего",
+                    "deathDelta": 2,
+                    "ending": "religion_lost_end"
+                }
+            ]
+        },
+        {
+            "id": "emigration_1",
+            "text": "Новая страна не спешит принимать тебя.",
+            "heroState": "heroFrustrated",
+            "options": [
+                {
+                    "label": "Остаться без денег, выживать день за днём",
+                    "deathDelta": 2,
+                    "next": "emigration_poverty"
+                },
+                {
+                    "label": "Найти унизительную, но стабильную работу без документов",
+                    "deathDelta": 1,
+                    "next": "emigration_labor"
+                },
+                {
+                    "label": "Заняться нелегальным заработком, раз легального пути нет",
+                    "deathDelta": 2,
+                    "next": "emigration_illegal"
+                }
+            ]
+        },
+        {
+            "id": "emigration_poverty",
+            "text": "Голод не спрашивает о гордости.",
+            "heroState": "heroCrying",
+            "options": [
+                {
+                    "label": "Принять помощь, начать заново с нуля",
+                    "deathDelta": -1,
+                    "ending": "emigration_second_life_end"
+                },
+                {
+                    "label": "Не выдержать и сломаться",
+                    "deathDelta": 2,
+                    "ending": "emigration_broken_end"
+                },
+                {
+                    "label": "Уйти в криминал, отчаявшись найти легальный путь",
+                    "deathDelta": 2,
+                    "next": "criminal_1"
+                }
+            ]
+        },
+        {
+            "id": "emigration_labor",
+            "text": "Работа без статуса не даёт прав, только обязанности.",
+            "heroState": "heroFrustrated",
+            "options": [
+                {
+                    "label": "Годами терпеть, чтобы однажды получить документы",
+                    "deathDelta": -1,
+                    "ending": "emigration_legalized_end"
+                },
+                {
+                    "label": "Сломаться под гнётом эксплуатации",
+                    "deathDelta": 2,
+                    "ending": "emigration_exploited_end"
+                }
+            ]
+        },
+        {
+            "id": "emigration_illegal",
+            "text": "Без документов легальные пути закрыты, остаются только нелегальные.",
+            "heroState": "heroFrustrated",
+            "options": [
+                {
+                    "label": "Построить нелегальный, но прибыльный промысел",
+                    "deathDelta": 1,
+                    "ending": "emigration_shadow_end"
+                },
+                {
+                    "label": "Разбогатеть настолько, чтобы купить себе легальность и влияние",
+                    "deathDelta": -1,
+                    "next": "political_1"
+                }
+            ]
+        },
+        {
+            "id": "gd_1",
+            "text": "Игра, которую ты придумываешь, значит для тебя больше, чем зарплата за неё.",
+            "heroState": "heroFocused",
+            "options": [
+                {
+                    "label": "Делать инди-игру в одиночку, вопреки всему",
+                    "deathDelta": 1,
+                    "next": "gd_indie"
+                },
+                {
+                    "label": "Пойти работать в крупную студию ради стабильности",
+                    "deathDelta": -1,
+                    "next": "gd_studio"
+                }
+            ]
+        },
+        {
+            "id": "gd_indie",
+            "text": "Ресурсов нет, но замысел кажется важнее ресурсов.",
+            "heroState": "heroFrustrated",
+            "options": [
+                {
+                    "label": "Работать на износ, чтобы закончить в одиночку",
+                    "deathDelta": 2,
+                    "next": "gd_crunch"
+                },
+                {
+                    "label": "Собрать команду таких же одержимых",
+                    "deathDelta": -1,
+                    "ending": "gd_cult_classic_end"
+                },
+                {
+                    "label": "Бросить, не выдержав неопределённости",
+                    "deathDelta": -1,
+                    "ending": "gd_abandoned_end"
+                },
+                {
+                    "label": "Выпустить игру с посланием, которое власти сочтут незаконным",
+                    "deathDelta": 2,
+                    "next": "prison_1"
+                }
+            ]
+        },
+        {
+            "id": "gd_crunch",
+            "text": "Проект почти закончен. Ты — нет.",
+            "heroState": "heroCrying",
+            "options": [
+                {
+                    "label": "Выпустить игру любой ценой",
+                    "deathDelta": 2,
+                    "ending": "gd_burnout_release_end"
+                },
+                {
+                    "label": "Остановиться, пока не поздно",
+                    "deathDelta": -2,
+                    "ending": "gd_abandoned_end"
+                },
+                {
+                    "label": "Искать спасения в вере, не выдержав давления",
+                    "deathDelta": -1,
+                    "next": "religion_1"
+                },
+                {
+                    "label": "Попасться на хранении запрещённого во время работы на износе",
+                    "deathDelta": 2,
+                    "next": "prison_1"
+                }
+            ]
+        },
+        {
+            "id": "gd_studio",
+            "text": "Стабильность есть, но замысел растворяется в чужих решениях.",
+            "heroState": "heroFrustrated",
+            "options": [
+                {
+                    "label": "Смириться и делать то, что скажут",
+                    "deathDelta": -1,
+                    "ending": "gd_corporate_end"
+                },
+                {
+                    "label": "Бороться за своё видение изнутри системы",
+                    "deathDelta": 1,
+                    "ending": "gd_fight_end"
+                },
+                {
+                    "label": "Подняться по карьерной лестнице, забыв про игры",
+                    "deathDelta": 1,
+                    "next": "political_1"
+                }
+            ]
+        },
+        {
+            "id": "music_1",
+            "text": "Мелодия в голове требует, чтобы её услышали.",
+            "heroState": "heroFocused",
+            "options": [
+                {
+                    "label": "Играть в переходах и маленьких клубах, оттачивая звук",
+                    "deathDelta": 0,
+                    "next": "music_underground"
+                },
+                {
+                    "label": "Попытаться сразу пробиться в большую индустрию",
+                    "deathDelta": 1,
+                    "next": "music_industry"
+                }
+            ]
+        },
+        {
+            "id": "music_underground",
+            "text": "Аудитория маленькая, но настоящая.",
+            "heroState": "heroFocused",
+            "options": [
+                {
+                    "label": "Оставаться верным своему звуку, даже без признания",
+                    "deathDelta": -1,
+                    "ending": "music_authentic_end"
+                },
+                {
+                    "label": "Однажды сорваться от нищеты и усталости",
+                    "deathDelta": 2,
+                    "ending": "music_burnout_end"
+                },
+                {
+                    "label": "Написать песню, которую сочтут призывом к бунту",
+                    "deathDelta": 2,
+                    "next": "prison_1"
+                }
+            ]
+        },
+        {
+            "id": "music_industry",
+            "text": "Индустрия готова сделать тебя звездой — на своих условиях.",
+            "heroState": "heroFrustrated",
+            "options": [
+                {
+                    "label": "Согласиться на образ, который придумали не ты",
+                    "deathDelta": 1,
+                    "next": "music_fame"
+                },
+                {
+                    "label": "Отказаться и остаться собой ценой карьеры",
+                    "deathDelta": -1,
+                    "ending": "music_authentic_end"
+                },
+                {
+                    "label": "Использовать популярность как трамплин во власть",
+                    "deathDelta": 1,
+                    "next": "political_1"
+                }
+            ]
+        },
+        {
+            "id": "music_fame",
+            "text": "Слава пришла, но она принадлежит не совсем тебе.",
+            "heroState": "heroCrying",
+            "options": [
+                {
+                    "label": "Играть роль, пока получается",
+                    "deathDelta": 1,
+                    "ending": "music_hollow_end"
+                },
+                {
+                    "label": "Не справиться с давлением и сорваться",
                     "deathDelta": 3,
-                    "ending": "overdose_end"
+                    "ending": "music_burnout_end"
                 },
                 {
-                    "label": "Найти в себе силы остановиться в последний момент",
-                    "deathDelta": -2,
-                    "next": "art_legend"
-                }
-            ]
-        },
-        {
-            "id": "art_legend",
-            "text": "Ты становишься тем, о ком будут помнить.",
-            "heroState": "Focused",
-            "options": [
-                {
-                    "label": "Выступать до глубокой старости, стать легендой при жизни",
-                    "deathDelta": -3,
-                    "ending": "living_legend_end"
-                },
-                {
-                    "label": "Уйти на пике, оставив после себя тишину",
+                    "label": "Искать спасения в вере, пытаясь справиться с зависимостью",
                     "deathDelta": -1,
-                    "ending": "legacy"
-                }
-            ]
-        },
-        {
-            "id": "years_of_silence",
-            "text": "Годы идут, а слова так и остаются несказанными.",
-            "heroState": "Crying",
-            "options": [
-                {
-                    "label": "Продолжать носить маску до конца",
-                    "deathDelta": 1,
-                    "ending": "silenced_end"
+                    "next": "religion_1"
                 },
                 {
-                    "label": "Однажды понять, что уже слишком поздно",
-                    "deathDelta": 1,
-                    "ending": "silenced_end"
+                    "label": "Быть задержанным с поличным",
+                    "deathDelta": 2,
+                    "next": "prison_1"
                 }
             ]
         },
         {
-            "id": "spiral_alone",
-            "text": "Без опоры каждый день становится немного тяжелее предыдущего.",
-            "heroState": "Crying",
+            "id": "cinema_1",
+            "text": "Кадры складываются в голове быстрее, чем находятся деньги на камеру.",
+            "heroState": "heroFocused",
             "options": [
                 {
-                    "label": "Перестать просить о помощи",
-                    "deathDelta": 1,
-                    "ending": "lost_end"
-                },
-                {
-                    "label": "Убедить себя, что справишься сам",
-                    "deathDelta": 1,
-                    "ending": "lost_end"
-                }
-            ]
-        },
-        {
-            "id": "endless_road",
-            "text": "Города меняются, лица меняются. Дом так и не появляется.",
-            "heroState": "Focused",
-            "options": [
-                {
-                    "label": "Ночевать там, где придётся",
-                    "deathDelta": 1,
-                    "ending": "wanderer_end"
-                },
-                {
-                    "label": "Перестать искать место, которое примет тебя",
-                    "deathDelta": 1,
-                    "ending": "wanderer_end"
-                }
-            ]
-        },
-        {
-            "id": "peaceful_departure",
-            "text": "Ты наблюдаешь последний закат без сожалений.",
-            "heroState": "Basic",
-            "options": [
-                {
-                    "label": "Уснуть спокойно",
+                    "label": "Снимать малобюджетное авторское кино",
                     "deathDelta": -1,
-                    "ending": "peaceful_end"
+                    "next": "cinema_indie"
                 },
                 {
-                    "label": "Отпустить всё, что держал, до последнего вдоха",
-                    "deathDelta": -1,
-                    "ending": "peaceful_end"
-                }
-            ]
-        },
-        {
-            "id": "final_fight",
-            "text": "Тело сдаётся раньше, чем воля.",
-            "heroState": "Frustrated",
-            "options": [
-                {
-                    "label": "Встать ещё раз, зная, что не встанешь снова",
+                    "label": "Пробиваться в большую индустрию",
                     "deathDelta": 1,
-                    "ending": "defiant_end"
+                    "next": "cinema_industry"
+                }
+            ]
+        },
+        {
+            "id": "cinema_indie",
+            "text": "Фестивали ценят смелость больше, чем бюджет.",
+            "heroState": "heroFocused",
+            "options": [
+                {
+                    "label": "Остаться верным авторскому видению до конца",
+                    "deathDelta": -1,
+                    "ending": "cinema_auteur_end"
                 },
                 {
-                    "label": "Кричать в темноту, что ещё не готов",
+                    "label": "Годами не находить финансирования на следующий фильм",
+                    "deathDelta": 2,
+                    "ending": "cinema_unmade_end"
+                },
+                {
+                    "label": "Снять фильм, который власти сочтут подстрекательством",
+                    "deathDelta": 2,
+                    "next": "prison_1"
+                }
+            ]
+        },
+        {
+            "id": "cinema_industry",
+            "text": "Студия готова снять твой фильм — если он станет их фильмом.",
+            "heroState": "heroFrustrated",
+            "options": [
+                {
+                    "label": "Пойти на компромисс ради проката",
                     "deathDelta": 1,
-                    "ending": "defiant_end"
+                    "next": "cinema_commercial"
+                },
+                {
+                    "label": "Уйти со съёмок, отстаивая замысел",
+                    "deathDelta": -1,
+                    "ending": "cinema_auteur_end"
+                },
+                {
+                    "label": "Использовать связи в индустрии, чтобы войти во власть",
+                    "deathDelta": 1,
+                    "next": "political_1"
                 }
             ]
         },
         {
-            "id": "reunion_moment",
-            "text": "Знакомый голос звучит иначе спустя столько лет.",
-            "heroState": "Basic",
+            "id": "cinema_commercial",
+            "text": "Фильм выходит в прокат. Он уже не совсем твой.",
+            "heroState": "heroCrying",
             "options": [
                 {
-                    "label": "Сказать то, что молчал всю жизнь",
-                    "deathDelta": -1,
-                    "ending": "reconciled_end"
+                    "label": "Смириться, продолжать снимать на этих условиях",
+                    "deathDelta": 1,
+                    "ending": "cinema_sellout_end"
                 },
                 {
-                    "label": "Просто быть рядом, без слов",
+                    "label": "Уйти из профессии, не выдержав компромиссов",
                     "deathDelta": -1,
-                    "ending": "reconciled_end"
+                    "ending": "cinema_unmade_end"
+                },
+                {
+                    "label": "Искать облегчение в зависимости, а потом — в вере",
+                    "deathDelta": -1,
+                    "next": "religion_1"
+                },
+                {
+                    "label": "Попасться с поличным на съёмочной площадке",
+                    "deathDelta": 2,
+                    "next": "prison_1"
                 }
             ]
         },
         {
-            "id": "silent_fading",
-            "text": "Слова просятся наружу, но привычка молчать сильнее.",
-            "heroState": "Crying",
+            "id": "lit_1",
+            "text": "История внутри требует, чтобы её записали.",
+            "heroState": "heroFocused",
             "options": [
                 {
-                    "label": "Унести всё с собой",
-                    "deathDelta": 0,
-                    "ending": "quiet_end"
+                    "label": "Писать то, что важно тебе, не думая о продажах",
+                    "deathDelta": -1,
+                    "next": "lit_honest"
                 },
                 {
-                    "label": "В последний момент понять, что уже поздно",
-                    "deathDelta": 0,
-                    "ending": "quiet_end"
+                    "label": "Писать то, что продаётся",
+                    "deathDelta": 1,
+                    "next": "lit_commercial"
+                }
+            ]
+        },
+        {
+            "id": "lit_honest",
+            "text": "Издатели вежливо отказывают, один за другим.",
+            "heroState": "heroFrustrated",
+            "options": [
+                {
+                    "label": "Продолжать писать в стол, несмотря ни на что",
+                    "deathDelta": -1,
+                    "ending": "lit_posthumous_end"
+                },
+                {
+                    "label": "Однажды сдаться и сжечь рукописи",
+                    "deathDelta": 2,
+                    "ending": "lit_burned_end"
+                },
+                {
+                    "label": "Опубликовать труд, который власти объявят незаконным",
+                    "deathDelta": 2,
+                    "next": "prison_1"
+                }
+            ]
+        },
+        {
+            "id": "lit_commercial",
+            "text": "Книги продаются, но не те, которые ты хотел написать.",
+            "heroState": "heroFrustrated",
+            "options": [
+                {
+                    "label": "Продолжать писать под чужим именем ради денег",
+                    "deathDelta": 1,
+                    "ending": "lit_ghostwriter_end"
+                },
+                {
+                    "label": "Однажды написать настоящую книгу под своим именем",
+                    "deathDelta": -1,
+                    "ending": "lit_posthumous_end"
+                },
+                {
+                    "label": "Использовать известность пера, чтобы писать чужие речи во власти",
+                    "deathDelta": 1,
+                    "next": "political_1"
+                },
+                {
+                    "label": "Искать спасения в вере, не выдержав давления славы",
+                    "deathDelta": -1,
+                    "next": "religion_1"
+                }
+            ]
+        },
+        {
+            "id": "war_art_expression",
+            "text": "То, что нельзя произнести вслух, иногда можно рассказать иначе.",
+            "heroState": "warFocused",
+            "options": [
+                {
+                    "label": "Написать книгу о войне",
+                    "deathDelta": -1,
+                    "next": "lit_1"
+                },
+                {
+                    "label": "Снять фильм о пережитом",
+                    "deathDelta": -1,
+                    "next": "cinema_1"
                 }
             ]
         }
     ],
     "endings": [
         {
-            "id": "legacy",
-            "text": "Сердце останавливается за работой, посреди неоконченного труда.",
-            "heroState": "Focused"
-        },
-        {
-            "id": "hero_death",
-            "text": "Пуля находит тебя раньше, чем ты успеваешь сделать последний шаг.",
-            "heroState": "Focused"
-        },
-        {
-            "id": "early_end",
-            "text": "Ты не справляешься с управлением на пустой ночной дороге, слишком уверенный, что справишься.",
-            "heroState": "Crying"
-        },
-        {
-            "id": "wanderer_end",
-            "text": "Ты замерзаешь под открытым небом, в городе, где даже не знаешь названия улицы.",
-            "heroState": "Basic"
-        },
-        {
-            "id": "collapse_end",
-            "text": "Сердце останавливается посреди рабочего дня, в кресле, которое ты так и не покинул вовремя.",
-            "heroState": "Crying"
-        },
-        {
-            "id": "peaceful_end",
-            "text": "Ты засыпаешь и не просыпаешься — тело просто устало отделять сон от смерти.",
-            "heroState": "Basic"
-        },
-        {
-            "id": "defiant_end",
-            "text": "Ты падаешь на полпути к двери, всё ещё пытаясь подняться.",
-            "heroState": "Frustrated"
-        },
-        {
-            "id": "reconciled_end",
-            "text": "Через несколько дней после встречи сердце останавливается во сне — но ты успел сказать главное.",
-            "heroState": "Basic"
-        },
-        {
-            "id": "quiet_end",
-            "text": "Тебя находят не сразу. Соседи не сразу заметили тишину.",
-            "heroState": "Crying"
-        },
-        {
-            "id": "silenced_end",
+            "id": "suppressed_kept_end",
             "text": "Ты угасаешь медленно, в одиночестве, так и не сказав того, что должен был.",
-            "heroState": "Crying"
+            "heroState": "heroCrying"
         },
         {
-            "id": "lost_end",
+            "id": "suppressed_seen_end",
+            "text": "Ты умираешь, зная, что хотя бы один человек видел тебя настоящего.",
+            "heroState": "heroBasic"
+        },
+        {
+            "id": "suppressed_faded_end",
+            "text": "Тебя находят не сразу — соседи не сразу заметили тишину.",
+            "heroState": "heroCrying"
+        },
+        {
+            "id": "home_exhaust_end",
+            "text": "Ты падаешь у случайной стройки. Никто не знает даже твоего имени.",
+            "heroState": "heroCrying"
+        },
+        {
+            "id": "home_freeze_end",
+            "text": "Ты замерзаешь под открытым небом, в городе, где даже не знаешь названия улицы.",
+            "heroState": "heroCrying"
+        },
+        {
+            "id": "criminal_caught_end",
+            "text": "Пуля находит тебя на пороге последнего дела — сирена звучит слишком поздно, чтобы иметь значение.",
+            "heroState": "heroFrustrated"
+        },
+        {
+            "id": "criminal_boss_end",
+            "text": "Свои же оказываются рядом в тот момент, когда выгоднее, чтобы тебя не стало.",
+            "heroState": "heroFrustrated"
+        },
+        {
+            "id": "prison_free_end",
+            "text": "Годы спустя ты умираешь дома, тихо, во сне — свобода, которую ты заслужил однажды, стала привычной.",
+            "heroState": "heroBasic"
+        },
+        {
+            "id": "prison_informer_end",
+            "text": "Бывшие сокамерники находят тебя первыми — раньше, чем ты успеваешь начать новую жизнь.",
+            "heroState": "prisonCrying"
+        },
+        {
+            "id": "prison_broken_end",
+            "text": "Тело выходит на свободу. Сердце останавливается через год, тихо, во сне — часть тебя так и осталась за решёткой.",
+            "heroState": "heroCrying"
+        },
+        {
+            "id": "prison_collapse_end",
+            "text": "Ты не переживаешь очередную ночь — тело не выдерживает того, что с ним делали слишком долго.",
+            "heroState": "prisonCrying"
+        },
+        {
+            "id": "prison_survivors_end",
+            "text": "Годы спустя ты умираешь дома, в своей постели — редкая роскошь для того, кто когда-то делил в лесу последний кусок.",
+            "heroState": "heroBasic"
+        },
+        {
+            "id": "prison_cannibal_end",
+            "text": "Ты выживаешь в лесу. Годы спустя сердце останавливается во сне — но глаза так и не научились закрываться спокойно.",
+            "heroState": "heroCrying"
+        },
+        {
+            "id": "war_support_end",
+            "text": "Война заканчивается без единого выстрела в твою сторону — но вопрос, что бы ты сделал на передовой, не отпускает до самой смерти много лет спустя.",
+            "heroState": "warFocused"
+        },
+        {
+            "id": "war_hero_end",
+            "text": "Годы спустя тебя хоронят с почестями — тот день на передовой стал главным в жизни, которую ты прожил после.",
+            "heroState": "warFocused"
+        },
+        {
+            "id": "war_fallen_end",
+            "text": "Пуля находит тебя раньше, чем ты успеваешь сделать последний шаг.",
+            "heroState": "warFocused"
+        },
+        {
+            "id": "war_conscience_end",
+            "text": "Ты умираешь стариком, зная точно: в тот день ты поступил правильно.",
+            "heroState": "warFocused"
+        },
+        {
+            "id": "war_court_end",
+            "text": "Трибунал не оставляет тебе будущего, только исполнение приговора на рассвете.",
+            "heroState": "warFrustrated"
+        },
+        {
+            "id": "war_collapse_end",
+            "text": "Ты не переживаешь того, кем стал — тело не выдерживает груза, который нёс в себе.",
+            "heroState": "warCrying"
+        },
+        {
+            "id": "war_healed_end",
+            "text": "Годы спустя ты умираешь дома, наконец помирившись с тем, что видел когда-то.",
+            "heroState": "warFocused"
+        },
+        {
+            "id": "war_silent_end",
+            "text": "Годы спустя война всё ещё не отпускает. Сердце останавливается тихо, во сне.",
+            "heroState": "warCrying"
+        },
+        {
+            "id": "business_soulless_end",
+            "text": "Ты давишься костью изысканной рыбы за обедом на собственной яхте — рядом нет никого, кто знал бы, что делать.",
+            "heroState": "businessFrustrated"
+        },
+        {
+            "id": "business_legacy_end",
+            "text": "Ты умираешь дома, окружённый теми, кому передал не только дело, но и имя.",
+            "heroState": "businessFocused"
+        },
+        {
+            "id": "business_ruin_end",
+            "text": "Скандал забирает всё до последней вещи. Сердце не выдерживает первой по-настоящему холодной зимы без отопления.",
+            "heroState": "businessFrustrated"
+        },
+        {
+            "id": "political_zenith_end",
+            "text": "Пуля находит тебя там, где ты меньше всего её ждал — среди тех, кого считал своими.",
+            "heroState": "powerFocused"
+        },
+        {
+            "id": "political_fallen_end",
+            "text": "Скандал заканчивает карьеру за одну ночь. Сердце не выдерживает первого дня без охраны у двери.",
+            "heroState": "powerCrying"
+        },
+        {
+            "id": "political_survivor_end",
+            "text": "Ты умираешь на своём посту, в почтенном возрасте — цену компромиссов знал только ты сам.",
+            "heroState": "powerFocused"
+        },
+        {
+            "id": "political_exposed_end",
+            "text": "Толпа у здания суда — последнее, что ты видишь перед тем, как сердце останавливается от стыда и напряжения.",
+            "heroState": "powerCrying"
+        },
+        {
+            "id": "science_legacy_end",
+            "text": "Сердце останавливается за работой, посреди неоконченного труда — который закончат другие, ссылаясь на твоё имя.",
+            "heroState": "heroFocused"
+        },
+        {
+            "id": "science_unfinished_end",
+            "text": "Годы работы обрываются на середине фразы в лабораторном журнале.",
+            "heroState": "heroCrying"
+        },
+        {
+            "id": "science_wealthy_end",
+            "text": "Ты умираешь в комфорте, который сам себе обеспечил — тихо, во сне, в своём доме.",
+            "heroState": "heroBasic"
+        },
+        {
+            "id": "science_regret_end",
+            "text": "Ты умираешь, так и не простив себе того, во что превратилось твоё открытие.",
+            "heroState": "heroCrying"
+        },
+        {
+            "id": "sports_mentor_end",
+            "text": "Ты умираешь дома, в окружении учеников, которые давно превзошли тебя — и это единственное, что имеет значение.",
+            "heroState": "heroBasic"
+        },
+        {
+            "id": "sports_drink_end",
+            "text": "Тело не выдерживает того, чем ты пытался заглушить пустоту.",
+            "heroState": "heroCrying"
+        },
+        {
+            "id": "family_peaceful_end",
+            "text": "Ты засыпаешь и не просыпаешься — в доме, полном тех, кто будет скучать.",
+            "heroState": "heroBasic"
+        },
+        {
+            "id": "family_lost_self_end",
+            "text": "Ты умираешь, так и не узнав, кем мог бы стать вне этого дома.",
+            "heroState": "heroCrying"
+        },
+        {
+            "id": "family_regret_end",
+            "text": "Ты умираешь в дороге, так и не решив, куда именно бежал все эти годы.",
+            "heroState": "heroCrying"
+        },
+        {
+            "id": "religion_saint_end",
+            "text": "Ты умираешь среди тех, кому служил всю жизнь — они будут помнить твоё имя дольше, чем ты сам его помнил.",
+            "heroState": "heroBasic"
+        },
+        {
+            "id": "religion_doubt_end",
+            "text": "Ты умираешь с вопросом, на который так и не получил ответа.",
+            "heroState": "heroCrying"
+        },
+        {
+            "id": "religion_peace_end",
+            "text": "Ты умираешь тихо, в привычном ритуале, без страха и без ответа — просто с покоем.",
+            "heroState": "heroBasic"
+        },
+        {
+            "id": "religion_lost_end",
+            "text": "Ты умираешь, ощущая пустоту там, где раньше было хоть что-то.",
+            "heroState": "heroCrying"
+        },
+        {
+            "id": "emigration_second_life_end",
+            "text": "Спустя годы тихой жизни сердце останавливается во сне, в доме, который наконец стал твоим.",
+            "heroState": "heroBasic"
+        },
+        {
+            "id": "emigration_broken_end",
             "text": "Тебя находят слишком поздно — замёрзшим в квартире без отопления, потому что платить было некому.",
-            "heroState": "Crying"
+            "heroState": "heroCrying"
+        },
+        {
+            "id": "emigration_legalized_end",
+            "text": "Годы спустя, уже легально, тело сдаётся тому напряжению, что копилось всё это время.",
+            "heroState": "heroFocused"
+        },
+        {
+            "id": "emigration_exploited_end",
+            "text": "Ты падаешь у станка. Работу это не остановит и на день.",
+            "heroState": "heroCrying"
+        },
+        {
+            "id": "emigration_shadow_end",
+            "text": "Ты разбогател на том, что не выносит дневного света — и погибаешь так же, вдали от него.",
+            "heroState": "heroFrustrated"
+        },
+        {
+            "id": "gd_cult_classic_end",
+            "text": "Игра выходит и находит своих немногих преданных игроков — ты умираешь стариком, всё ещё отвечая на письма фанатов.",
+            "heroState": "heroFocused"
+        },
+        {
+            "id": "gd_abandoned_end",
+            "text": "Проект так и остаётся папкой на старом диске. Ты умираешь, так и не открыв её снова.",
+            "heroState": "heroCrying"
+        },
+        {
+            "id": "gd_burnout_release_end",
+            "text": "Игра выходит в день, когда твоё сердце останавливается за столом — обзоры ты уже не прочтёшь.",
+            "heroState": "heroCrying"
+        },
+        {
+            "id": "gd_corporate_end",
+            "text": "Ты умираешь на пенсии, обеспеченный, глядя на игру, в титрах которой твоё имя стоит одним из полусотни.",
+            "heroState": "heroFrustrated"
+        },
+        {
+            "id": "gd_fight_end",
+            "text": "Ты умираешь, так и не пробив систему до конца — но кое-что из задуманного всё же выжило в финальной игре.",
+            "heroState": "heroFocused"
+        },
+        {
+            "id": "music_authentic_end",
+            "text": "Ты выступаешь до глубокой старости для небольшого, но верного зала — и уходишь тихо, вскоре после последнего выступления.",
+            "heroState": "heroFocused"
+        },
+        {
+            "id": "music_burnout_end",
+            "text": "Передозировка находит тебя раньше, чем следующая песня.",
+            "heroState": "heroCrying"
+        },
+        {
+            "id": "music_hollow_end",
+            "text": "Ты умираешь на пике славы, в окружении людей, которые знают образ, но не знают тебя.",
+            "heroState": "heroCrying"
+        },
+        {
+            "id": "cinema_auteur_end",
+            "text": "Ты снимаешь до последнего — камера рядом с кроватью, даже когда сил хватает только на один кадр в день.",
+            "heroState": "heroFocused"
+        },
+        {
+            "id": "cinema_unmade_end",
+            "text": "Ты умираешь с папкой нереализованных сценариев на столе — ни один так и не стал фильмом.",
+            "heroState": "heroCrying"
+        },
+        {
+            "id": "cinema_sellout_end",
+            "text": "Ты умираешь состоятельным и забытым — последний фильм с твоим именем никто уже не вспомнит.",
+            "heroState": "heroCrying"
+        },
+        {
+            "id": "lit_posthumous_end",
+            "text": "Твою главную книгу находят и издают уже после смерти — та, ради которой стоило продолжать писать.",
+            "heroState": "heroFocused"
+        },
+        {
+            "id": "lit_burned_end",
+            "text": "Пепел рукописей — единственное, что осталось от того, что ты хотел сказать миру.",
+            "heroState": "heroCrying"
+        },
+        {
+            "id": "lit_ghostwriter_end",
+            "text": "Ты умираешь, автор десятков чужих имён на обложках и ни одной — своей.",
+            "heroState": "heroCrying"
         },
         {
             "id": "caught_by_death",
             "text": "Сердце останавливается посреди улицы. Никто не успевает даже спросить, что случилось.",
-            "heroState": "Crying"
-        },
-        {
-            "id": "second_life_end",
-            "text": "Спустя годы тихой жизни сердце останавливается во сне, в доме, который наконец стал твоим.",
-            "heroState": "Basic"
-        },
-        {
-            "id": "legalized_end",
-            "text": "Годы спустя, уже легально, тело сдаётся тому напряжению, что копилось всё это время.",
-            "heroState": "Focused"
-        },
-        {
-            "id": "exploited_end",
-            "text": "Ты падаешь у станка. Работу это не остановит и на день.",
-            "heroState": "Crying"
-        },
-        {
-            "id": "informer_end",
-            "text": "Бывшие сокамерники находят тебя первыми — раньше, чем ты успеваешь начать новую жизнь.",
-            "heroState": "Crying"
-        },
-        {
-            "id": "survivors_end",
-            "text": "Годы спустя ты умираешь дома, в своей постели — редкая роскошь для того, кто когда-то делил в лесу последний кусок.",
-            "heroState": "Basic"
-        },
-        {
-            "id": "cannibal_end",
-            "text": "Ты выживаешь в лесу. Годы спустя сердце останавливается во сне — но глаза так и не научились закрываться спокойно.",
-            "heroState": "Crying"
-        },
-        {
-            "id": "silent_veteran_end",
-            "text": "Годы спустя война всё ещё не отпускает. Сердце останавливается тихо, во сне.",
-            "heroState": "Crying"
-        },
-        {
-            "id": "power_end",
-            "text": "Пуля находит тебя там, где ты меньше всего её ждал — среди тех, кого считал своими.",
-            "heroState": "Focused"
-        },
-        {
-            "id": "fallen_end",
-            "text": "Скандал забирает всё до последней вещи. Сердце не выдерживает первой по-настоящему холодной зимы без отопления.",
-            "heroState": "Crying"
-        },
-        {
-            "id": "soulless_end",
-            "text": "Ты давишься костью изысканной рыбы за обедом на собственной яхте — рядом нет никого, кто знал бы, что делать.",
-            "heroState": "Frustrated"
-        },
-        {
-            "id": "mentor_end",
-            "text": "Ты умираешь дома, в окружении учеников, которые давно превзошли тебя — и это единственное, что имеет значение.",
-            "heroState": "Basic"
-        },
-        {
-            "id": "addiction_end",
-            "text": "Тело не выдерживает того, чем ты пытался заглушить пустоту.",
-            "heroState": "Crying"
-        },
-        {
-            "id": "overdose_end",
-            "text": "Передозировка находит тебя раньше, чем следующая картина.",
-            "heroState": "Crying"
-        },
-        {
-            "id": "living_legend_end",
-            "text": "Ты уходишь тихо, вскоре после последнего выступления — зал так и не узнал, что видел тебя в последний раз.",
-            "heroState": "Focused"
+            "heroState": "heroCrying"
         }
     ]
 }

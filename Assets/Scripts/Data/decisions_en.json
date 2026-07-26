@@ -1,0 +1,1696 @@
+{
+  "startNode": "childhood",
+  "nodes": [
+    {
+      "id": "childhood",
+      "text": "You grow up in a family that already decided everything for you.",
+      "heroState": "heroBasic",
+      "options": [
+        {
+          "label": "Obey and meet expectations",
+          "deathDelta": -1,
+          "next": "obedience"
+        },
+        {
+          "label": "Argue and stand your ground",
+          "deathDelta": 1,
+          "next": "rebellion"
+        },
+        {
+          "label": "Grow up ordinary, never standing out",
+          "deathDelta": -1,
+          "next": "family_1"
+        }
+      ]
+    },
+    {
+      "id": "obedience",
+      "text": "Rules give a sense of safety. But where do they lead?",
+      "heroState": "heroBasic",
+      "options": [
+        {
+          "label": "Study as hard as you can, join the system",
+          "deathDelta": 1,
+          "next": "school_crossroads"
+        },
+        {
+          "label": "Find a quiet rebellion within the rules",
+          "deathDelta": 0,
+          "next": "suppressed_1"
+        },
+        {
+          "label": "Discover an early pull toward art",
+          "deathDelta": 0,
+          "next": "creative_crossroads"
+        }
+      ]
+    },
+    {
+      "id": "rebellion",
+      "text": "Every disagreement pulls you further from home.",
+      "heroState": "heroFrustrated",
+      "options": [
+        {
+          "label": "Leave the family too soon",
+          "deathDelta": 2,
+          "next": "home_1"
+        },
+        {
+          "label": "Chase thrills at the edge of the law",
+          "deathDelta": 1,
+          "next": "youth_edge"
+        },
+        {
+          "label": "Seek comfort in faith as everything falls apart",
+          "deathDelta": -1,
+          "next": "religion_1"
+        }
+      ]
+    },
+    {
+      "id": "school_crossroads",
+      "text": "School days are full of choices no one warns you about.",
+      "heroState": "heroFocused",
+      "options": [
+        {
+          "label": "Cheat",
+          "deathDelta": 0,
+          "next": "business_1"
+        },
+        {
+          "label": "Study hard",
+          "deathDelta": -1,
+          "next": "science_1"
+        },
+        {
+          "label": "Get into fights",
+          "deathDelta": 2,
+          "next": "sports_1"
+        },
+        {
+          "label": "Silently endure the mockery",
+          "deathDelta": 1,
+          "next": "suppressed_1"
+        }
+      ]
+    },
+    {
+      "id": "creative_crossroads",
+      "text": "Something is being born inside you that has no use yet.",
+      "heroState": "heroFocused",
+      "options": [
+        {
+          "label": "Games you invent yourself",
+          "deathDelta": 0,
+          "next": "gd_1"
+        },
+        {
+          "label": "Melodies that won't let go",
+          "deathDelta": 0,
+          "next": "music_1"
+        },
+        {
+          "label": "Frames that assemble themselves in your head",
+          "deathDelta": 0,
+          "next": "cinema_1"
+        },
+        {
+          "label": "Stories begging to be written down",
+          "deathDelta": 0,
+          "next": "lit_1"
+        }
+      ]
+    },
+    {
+      "id": "youth_edge",
+      "text": "The edge of the law tempts those who have nothing to lose.",
+      "heroState": "heroFrustrated",
+      "options": [
+        {
+          "label": "Commit a real crime",
+          "deathDelta": 2,
+          "next": "criminal_1"
+        },
+        {
+          "label": "Volunteer for the front, far too young for it",
+          "deathDelta": 1,
+          "next": "war_1"
+        },
+        {
+          "label": "End up behind bars over one reckless night",
+          "deathDelta": 2,
+          "next": "prison_1"
+        }
+      ]
+    },
+    {
+      "id": "suppressed_1",
+      "text": "Silence becomes your most frequent word.",
+      "heroState": "heroFrustrated",
+      "options": [
+        {
+          "label": "Find a secret outlet no one will know about",
+          "deathDelta": 0,
+          "next": "suppressed_hobby"
+        },
+        {
+          "label": "Slowly stop feeling anything at all",
+          "deathDelta": 2,
+          "next": "suppressed_numb"
+        }
+      ]
+    },
+    {
+      "id": "suppressed_hobby",
+      "text": "The secret life becomes the only real one.",
+      "heroState": "heroCrying",
+      "options": [
+        {
+          "label": "Keep it to yourself until the end",
+          "deathDelta": -1,
+          "ending": "suppressed_kept_end"
+        },
+        {
+          "label": "Let someone finally see the real you",
+          "deathDelta": -2,
+          "ending": "suppressed_seen_end"
+        }
+      ]
+    },
+    {
+      "id": "suppressed_numb",
+      "text": "Feeling became too painful, so you stopped.",
+      "heroState": "heroCrying",
+      "options": [
+        {
+          "label": "Live out your days apart from everyone",
+          "deathDelta": 1,
+          "ending": "suppressed_faded_end"
+        },
+        {
+          "label": "Channel the emptiness into a hunger for power",
+          "deathDelta": 1,
+          "next": "political_1"
+        },
+        {
+          "label": "Seek relief in faith",
+          "deathDelta": -1,
+          "next": "religion_1"
+        }
+      ]
+    },
+    {
+      "id": "home_1",
+      "text": "Home is behind you now. The road is ahead.",
+      "heroState": "heroFocused",
+      "options": [
+        {
+          "label": "Look for odd jobs",
+          "deathDelta": 0,
+          "next": "home_labor"
+        },
+        {
+          "label": "Trust the road completely",
+          "deathDelta": 1,
+          "next": "home_road"
+        }
+      ]
+    },
+    {
+      "id": "home_labor",
+      "text": "Odd jobs give you neither money nor roots.",
+      "heroState": "heroFrustrated",
+      "options": [
+        {
+          "label": "Keep barely staying afloat",
+          "deathDelta": 1,
+          "ending": "home_exhaust_end"
+        },
+        {
+          "label": "Start writing down the stories of people you meet",
+          "deathDelta": -1,
+          "next": "lit_1"
+        },
+        {
+          "label": "Start composing melodies out of boredom in the underpass",
+          "deathDelta": -1,
+          "next": "music_1"
+        },
+        {
+          "label": "Use street smarts for a career in power",
+          "deathDelta": 1,
+          "next": "political_1"
+        }
+      ]
+    },
+    {
+      "id": "home_road",
+      "text": "Cities change, faces change. Home never appears.",
+      "heroState": "heroFocused",
+      "options": [
+        {
+          "label": "Freeze one day under the open sky",
+          "deathDelta": 2,
+          "ending": "home_freeze_end"
+        },
+        {
+          "label": "Invent whole worlds to keep from losing your mind",
+          "deathDelta": -1,
+          "next": "gd_1"
+        },
+        {
+          "label": "Film what's happening on a found camera, finding meaning in it",
+          "deathDelta": -1,
+          "next": "cinema_1"
+        },
+        {
+          "label": "Use a drifter's charisma to eventually seize power",
+          "deathDelta": 1,
+          "next": "political_1"
+        }
+      ]
+    },
+    {
+      "id": "criminal_1",
+      "text": "Crime becomes a way of life.",
+      "heroState": "heroFrustrated",
+      "options": [
+        {
+          "label": "Work alone, small-time",
+          "deathDelta": 0,
+          "next": "criminal_lone"
+        },
+        {
+          "label": "Join an organized group",
+          "deathDelta": 1,
+          "next": "criminal_gang"
+        }
+      ]
+    },
+    {
+      "id": "criminal_lone",
+      "text": "Small jobs bring no big score — only big risk.",
+      "heroState": "heroFrustrated",
+      "options": [
+        {
+          "label": "Trust your luck one more time",
+          "deathDelta": 2,
+          "ending": "criminal_caught_end"
+        },
+        {
+          "label": "Legalize your earnings through a business of your own",
+          "deathDelta": -1,
+          "next": "business_1"
+        }
+      ]
+    },
+    {
+      "id": "criminal_gang",
+      "text": "The group offers protection, but demands total loyalty.",
+      "heroState": "heroFrustrated",
+      "options": [
+        {
+          "label": "Climb all the way to the top",
+          "deathDelta": 1,
+          "ending": "criminal_boss_end"
+        },
+        {
+          "label": "Launder the money through a real business",
+          "deathDelta": -1,
+          "next": "business_1"
+        },
+        {
+          "label": "Use the underworld's connections for legitimate power",
+          "deathDelta": 1,
+          "next": "political_1"
+        }
+      ]
+    },
+    {
+      "id": "prison_1",
+      "text": "The walls decide who you'll become next.",
+      "heroState": "prisonFrustrated",
+      "options": [
+        {
+          "label": "Cooperate with the administration",
+          "deathDelta": -1,
+          "next": "prison_cooperate"
+        },
+        {
+          "label": "Endure it in silence",
+          "deathDelta": 2,
+          "next": "prison_endure"
+        },
+        {
+          "label": "Find accomplices for an escape",
+          "deathDelta": 1,
+          "next": "prison_escape"
+        },
+        {
+          "label": "Go to war to shorten your sentence",
+          "deathDelta": -1,
+          "next": "war_1"
+        }
+      ]
+    },
+    {
+      "id": "prison_cooperate",
+      "text": "Cooperation opens the door a little earlier.",
+      "heroState": "prisonFocused",
+      "options": [
+        {
+          "label": "Get out early and try to live differently",
+          "deathDelta": -2,
+          "ending": "prison_free_end"
+        },
+        {
+          "label": "Become an informer for good",
+          "deathDelta": 1,
+          "ending": "prison_informer_end"
+        }
+      ]
+    },
+    {
+      "id": "prison_endure",
+      "text": "Every day here wears something away in you.",
+      "heroState": "prisonCrying",
+      "options": [
+        {
+          "label": "Get out broken, but alive",
+          "deathDelta": 1,
+          "ending": "prison_broken_end"
+        },
+        {
+          "label": "Not survive another day",
+          "deathDelta": 3,
+          "ending": "prison_collapse_end"
+        }
+      ]
+    },
+    {
+      "id": "prison_escape",
+      "text": "The escape plan is ready. The forest waits on the other side of the fence.",
+      "heroState": "prisonFrustrated",
+      "options": [
+        {
+          "label": "Run and hide in the forest",
+          "deathDelta": 2,
+          "next": "prison_forest"
+        },
+        {
+          "label": "Back out at the last moment",
+          "deathDelta": -1,
+          "next": "prison_endure"
+        }
+      ]
+    },
+    {
+      "id": "prison_forest",
+      "text": "Food runs out faster than hope.",
+      "heroState": "prisonCrying",
+      "options": [
+        {
+          "label": "Act together, share the last of it equally",
+          "deathDelta": -1,
+          "ending": "prison_survivors_end"
+        },
+        {
+          "label": "Do the unthinkable to survive",
+          "deathDelta": 3,
+          "ending": "prison_cannibal_end"
+        },
+        {
+          "label": "Seek redemption in faith after what happened",
+          "deathDelta": -1,
+          "next": "religion_1"
+        }
+      ]
+    },
+    {
+      "id": "war_1",
+      "text": "War changes the rules of the game for everyone.",
+      "heroState": "warFocused",
+      "options": [
+        {
+          "label": "Serve in the rear",
+          "deathDelta": -1,
+          "next": "war_support"
+        },
+        {
+          "label": "Ask to be sent straight to the front",
+          "deathDelta": 1,
+          "next": "war_frontline"
+        },
+        {
+          "label": "Emigrate instead of serving",
+          "deathDelta": -1,
+          "next": "emigration_1"
+        },
+        {
+          "label": "Use the chaos of war to seize power",
+          "deathDelta": 1,
+          "next": "political_1"
+        }
+      ]
+    },
+    {
+      "id": "war_support",
+      "text": "The rear is safer, but your conscience won't rest.",
+      "heroState": "warFocused",
+      "options": [
+        {
+          "label": "Stay here until the war ends",
+          "deathDelta": -1,
+          "ending": "war_support_end"
+        },
+        {
+          "label": "Ask to be sent to the front after all",
+          "deathDelta": 1,
+          "next": "war_frontline"
+        }
+      ]
+    },
+    {
+      "id": "war_frontline",
+      "text": "The front line leaves no time to think.",
+      "heroState": "warFocused",
+      "options": [
+        {
+          "label": "Save a wounded comrade under fire",
+          "deathDelta": 1,
+          "next": "war_rescue"
+        },
+        {
+          "label": "Disobey an order",
+          "deathDelta": 2,
+          "next": "war_disobey"
+        },
+        {
+          "label": "Fight bravely and without mercy",
+          "deathDelta": 1,
+          "next": "war_brutal"
+        }
+      ]
+    },
+    {
+      "id": "war_rescue",
+      "text": "You're dragging your comrade through gunfire. Every step could be your last.",
+      "heroState": "warFocused",
+      "options": [
+        {
+          "label": "Carry him out alive",
+          "deathDelta": -1,
+          "ending": "war_hero_end"
+        },
+        {
+          "label": "Die before you can get him out",
+          "deathDelta": 3,
+          "ending": "war_fallen_end"
+        }
+      ]
+    },
+    {
+      "id": "war_disobey",
+      "text": "The order contradicts everything you believe.",
+      "heroState": "warFrustrated",
+      "options": [
+        {
+          "label": "Disobey and save the innocent",
+          "deathDelta": -1,
+          "ending": "war_conscience_end"
+        },
+        {
+          "label": "Face a court-martial",
+          "deathDelta": 2,
+          "ending": "war_court_end"
+        }
+      ]
+    },
+    {
+      "id": "war_brutal",
+      "text": "You fight in a way that silences questions of morality.",
+      "heroState": "warFrustrated",
+      "options": [
+        {
+          "label": "Win at any cost, losing part of yourself",
+          "deathDelta": 1,
+          "next": "war_lost_humanity"
+        },
+        {
+          "label": "Hold on to your humanity at the last moment",
+          "deathDelta": -1,
+          "ending": "war_conscience_end"
+        }
+      ]
+    },
+    {
+      "id": "war_lost_humanity",
+      "text": "You'll come back a different person, if you come back at all.",
+      "heroState": "warCrying",
+      "options": [
+        {
+          "label": "Live to make it home",
+          "deathDelta": -1,
+          "next": "war_ptsd"
+        },
+        {
+          "label": "Not survive what you became",
+          "deathDelta": 2,
+          "ending": "war_collapse_end"
+        }
+      ]
+    },
+    {
+      "id": "war_ptsd",
+      "text": "Home is the same. You are not.",
+      "heroState": "warCrying",
+      "options": [
+        {
+          "label": "Seek help, talk about what happened",
+          "deathDelta": -2,
+          "ending": "war_healed_end"
+        },
+        {
+          "label": "Stay silent and carry it alone",
+          "deathDelta": 1,
+          "ending": "war_silent_end"
+        },
+        {
+          "label": "Seek refuge in faith",
+          "deathDelta": -1,
+          "next": "religion_1"
+        },
+        {
+          "label": "Express what happened through art",
+          "deathDelta": -1,
+          "next": "war_art_expression"
+        }
+      ]
+    },
+    {
+      "id": "business_1",
+      "text": "Money decides faster than principles.",
+      "heroState": "businessFocused",
+      "options": [
+        {
+          "label": "Build an empire, whatever the cost",
+          "deathDelta": 1,
+          "next": "business_empire"
+        },
+        {
+          "label": "Run the business honestly, slowly",
+          "deathDelta": -1,
+          "next": "business_honest"
+        },
+        {
+          "label": "Use capital to buy power",
+          "deathDelta": 1,
+          "next": "political_1"
+        }
+      ]
+    },
+    {
+      "id": "business_empire",
+      "text": "Success grows, and loneliness grows with it.",
+      "heroState": "businessFrustrated",
+      "options": [
+        {
+          "label": "Trade everything personal for success",
+          "deathDelta": 2,
+          "ending": "business_soulless_end"
+        },
+        {
+          "label": "Stop before you lose yourself",
+          "deathDelta": -1,
+          "next": "business_honest"
+        }
+      ]
+    },
+    {
+      "id": "business_honest",
+      "text": "The business grows slowly, but it's built on trust.",
+      "heroState": "businessFocused",
+      "options": [
+        {
+          "label": "Hand it to your children, having grown old at the helm",
+          "deathDelta": -1,
+          "ending": "business_legacy_end"
+        },
+        {
+          "label": "Lose everything in one bad year",
+          "deathDelta": 2,
+          "ending": "business_ruin_end"
+        },
+        {
+          "label": "Turn to illegal schemes to win it back",
+          "deathDelta": 2,
+          "next": "criminal_1"
+        }
+      ]
+    },
+    {
+      "id": "political_1",
+      "text": "Betraying your own principles opens doors that open no other way.",
+      "heroState": "powerFocused",
+      "options": [
+        {
+          "label": "Go all the way, whatever it costs",
+          "deathDelta": 1,
+          "next": "political_power"
+        },
+        {
+          "label": "Keep up the appearance of principles",
+          "deathDelta": 0,
+          "next": "political_facade"
+        }
+      ]
+    },
+    {
+      "id": "political_power",
+      "text": "Every decision now shapes other people's fates.",
+      "heroState": "powerFrustrated",
+      "options": [
+        {
+          "label": "Strike a deal with your conscience for the sake of greatness",
+          "deathDelta": 1,
+          "ending": "political_zenith_end"
+        },
+        {
+          "label": "Someday lose everything you built on lies",
+          "deathDelta": 2,
+          "ending": "political_fallen_end"
+        }
+      ]
+    },
+    {
+      "id": "political_facade",
+      "text": "The mask of principle holds — until it's truly tested.",
+      "heroState": "powerFocused",
+      "options": [
+        {
+          "label": "Pass the test, giving up something small",
+          "deathDelta": 0,
+          "ending": "political_survivor_end"
+        },
+        {
+          "label": "Be exposed publicly",
+          "deathDelta": 2,
+          "ending": "political_exposed_end"
+        }
+      ]
+    },
+    {
+      "id": "science_1",
+      "text": "Science promises no recognition, only truth.",
+      "heroState": "heroFocused",
+      "options": [
+        {
+          "label": "Devote your life to fundamental work that will be understood later",
+          "deathDelta": -1,
+          "next": "science_dedication"
+        },
+        {
+          "label": "Chase quick, practical success",
+          "deathDelta": 1,
+          "next": "science_practical"
+        },
+        {
+          "label": "Sell your discovery to whoever offers power",
+          "deathDelta": 1,
+          "next": "political_1"
+        }
+      ]
+    },
+    {
+      "id": "science_dedication",
+      "text": "The lab becomes more of a home than home itself.",
+      "heroState": "heroFocused",
+      "options": [
+        {
+          "label": "Finish the work, even if it takes your whole life",
+          "deathDelta": -1,
+          "ending": "science_legacy_end"
+        },
+        {
+          "label": "Burn out halfway, never finishing",
+          "deathDelta": 2,
+          "ending": "science_unfinished_end"
+        }
+      ]
+    },
+    {
+      "id": "science_practical",
+      "text": "Practical gain arrives faster than truth.",
+      "heroState": "heroFrustrated",
+      "options": [
+        {
+          "label": "Grow rich from your discovery",
+          "deathDelta": -1,
+          "ending": "science_wealthy_end"
+        },
+        {
+          "label": "Discover your discovery was used for something you never wanted",
+          "deathDelta": 2,
+          "ending": "science_regret_end"
+        },
+        {
+          "label": "Seek redemption in faith",
+          "deathDelta": -1,
+          "next": "religion_1"
+        }
+      ]
+    },
+    {
+      "id": "sports_1",
+      "text": "The body becomes a tool, and records become the goal.",
+      "heroState": "heroFocused",
+      "options": [
+        {
+          "label": "Push for success at the limit of your strength",
+          "deathDelta": 1,
+          "next": "sports_success"
+        },
+        {
+          "label": "Suffer an injury that changes everything",
+          "deathDelta": 2,
+          "next": "sports_injury"
+        }
+      ]
+    },
+    {
+      "id": "sports_success",
+      "text": "Victories bring fame, but it doesn't last.",
+      "heroState": "heroBasic",
+      "options": [
+        {
+          "label": "Leave at your peak, become a coach",
+          "deathDelta": -1,
+          "next": "sports_coach"
+        },
+        {
+          "label": "Cling to fame longer than you should",
+          "deathDelta": 1,
+          "next": "sports_injury"
+        }
+      ]
+    },
+    {
+      "id": "sports_injury",
+      "text": "Your body no longer obeys the way it used to.",
+      "heroState": "heroCrying",
+      "options": [
+        {
+          "label": "Find a new meaning outside sport",
+          "deathDelta": -1,
+          "next": "sports_coach"
+        },
+        {
+          "label": "Fail to cope with the loss of who you were",
+          "deathDelta": 2,
+          "ending": "sports_drink_end"
+        }
+      ]
+    },
+    {
+      "id": "sports_coach",
+      "text": "Now you pass on what you know to others.",
+      "heroState": "heroBasic",
+      "options": [
+        {
+          "label": "Raise students who will go further than you",
+          "deathDelta": -2,
+          "ending": "sports_mentor_end"
+        },
+        {
+          "label": "Drink yourself away from irrelevance",
+          "deathDelta": 2,
+          "ending": "sports_drink_end"
+        },
+        {
+          "label": "Use your old fame to go into politics",
+          "deathDelta": 1,
+          "next": "political_1"
+        },
+        {
+          "label": "Find comfort in faith instead of the bottle",
+          "deathDelta": -1,
+          "next": "religion_1"
+        }
+      ]
+    },
+    {
+      "id": "family_1",
+      "text": "An ordinary life demands choices too, just quieter ones.",
+      "heroState": "heroBasic",
+      "options": [
+        {
+          "label": "Build a home and raise children",
+          "deathDelta": -1,
+          "next": "family_home"
+        },
+        {
+          "label": "Search for more, unsatisfied with little",
+          "deathDelta": 1,
+          "next": "family_restless"
+        }
+      ]
+    },
+    {
+      "id": "family_home",
+      "text": "The years pass evenly, marked not by events but by habits.",
+      "heroState": "heroBasic",
+      "options": [
+        {
+          "label": "Grow old surrounded by those you love",
+          "deathDelta": -2,
+          "ending": "family_peaceful_end"
+        },
+        {
+          "label": "Realize one day you lost yourself along the way",
+          "deathDelta": 1,
+          "ending": "family_lost_self_end"
+        }
+      ]
+    },
+    {
+      "id": "family_restless",
+      "text": "Ordinary life starts to feel too small.",
+      "heroState": "heroFrustrated",
+      "options": [
+        {
+          "label": "Run from the routine too late to start over",
+          "deathDelta": 2,
+          "ending": "family_regret_end"
+        },
+        {
+          "label": "Find meaning in your children instead of yourself",
+          "deathDelta": -1,
+          "ending": "family_peaceful_end"
+        },
+        {
+          "label": "Seek recognition beyond the family, in power",
+          "deathDelta": 1,
+          "next": "political_1"
+        },
+        {
+          "label": "Seek meaning in faith rather than in the world",
+          "deathDelta": -1,
+          "next": "religion_1"
+        }
+      ]
+    },
+    {
+      "id": "religion_1",
+      "text": "Faith promises meaning where none is visible anymore.",
+      "heroState": "heroFocused",
+      "options": [
+        {
+          "label": "Give yourself to faith completely",
+          "deathDelta": -1,
+          "next": "religion_devout"
+        },
+        {
+          "label": "Use faith only as comfort, nothing more",
+          "deathDelta": 0,
+          "next": "religion_casual"
+        }
+      ]
+    },
+    {
+      "id": "religion_devout",
+      "text": "Service consumes everything that used to be yours.",
+      "heroState": "heroFocused",
+      "options": [
+        {
+          "label": "Devote your life to serving others",
+          "deathDelta": -2,
+          "ending": "religion_saint_end"
+        },
+        {
+          "label": "Discover faith doesn't save you from doubt",
+          "deathDelta": 1,
+          "ending": "religion_doubt_end"
+        },
+        {
+          "label": "Turn faith into a tool of influence over people",
+          "deathDelta": 1,
+          "next": "political_1"
+        }
+      ]
+    },
+    {
+      "id": "religion_casual",
+      "text": "Faith stays close, but doesn't define you entirely.",
+      "heroState": "heroBasic",
+      "options": [
+        {
+          "label": "Find peace in simple rituals",
+          "deathDelta": -1,
+          "ending": "religion_peace_end"
+        },
+        {
+          "label": "Lose your faith completely just when you needed it most",
+          "deathDelta": 2,
+          "ending": "religion_lost_end"
+        }
+      ]
+    },
+    {
+      "id": "emigration_1",
+      "text": "The new country is in no hurry to accept you.",
+      "heroState": "heroFrustrated",
+      "options": [
+        {
+          "label": "Stay penniless, surviving day to day",
+          "deathDelta": 2,
+          "next": "emigration_poverty"
+        },
+        {
+          "label": "Find humiliating but stable work without papers",
+          "deathDelta": 1,
+          "next": "emigration_labor"
+        },
+        {
+          "label": "Turn to illegal earnings, since there's no legal path",
+          "deathDelta": 2,
+          "next": "emigration_illegal"
+        }
+      ]
+    },
+    {
+      "id": "emigration_poverty",
+      "text": "Hunger doesn't ask about pride.",
+      "heroState": "heroCrying",
+      "options": [
+        {
+          "label": "Accept help, start over from nothing",
+          "deathDelta": -1,
+          "ending": "emigration_second_life_end"
+        },
+        {
+          "label": "Fail to hold on and break",
+          "deathDelta": 2,
+          "ending": "emigration_broken_end"
+        },
+        {
+          "label": "Turn to crime, having lost hope of a legal path",
+          "deathDelta": 2,
+          "next": "criminal_1"
+        }
+      ]
+    },
+    {
+      "id": "emigration_labor",
+      "text": "Work without status grants no rights, only obligations.",
+      "heroState": "heroFrustrated",
+      "options": [
+        {
+          "label": "Endure it for years, until you finally get papers",
+          "deathDelta": -1,
+          "ending": "emigration_legalized_end"
+        },
+        {
+          "label": "Break under the weight of exploitation",
+          "deathDelta": 2,
+          "ending": "emigration_exploited_end"
+        }
+      ]
+    },
+    {
+      "id": "emigration_illegal",
+      "text": "Without papers, legal paths are closed — only illegal ones remain.",
+      "heroState": "heroFrustrated",
+      "options": [
+        {
+          "label": "Build an illegal but profitable trade",
+          "deathDelta": 1,
+          "ending": "emigration_shadow_end"
+        },
+        {
+          "label": "Grow rich enough to buy yourself legality and influence",
+          "deathDelta": -1,
+          "next": "political_1"
+        }
+      ]
+    },
+    {
+      "id": "gd_1",
+      "text": "The game you're designing means more to you than the paycheck for it.",
+      "heroState": "heroFocused",
+      "options": [
+        {
+          "label": "Make an indie game alone, against all odds",
+          "deathDelta": 1,
+          "next": "gd_indie"
+        },
+        {
+          "label": "Go work at a major studio for stability",
+          "deathDelta": -1,
+          "next": "gd_studio"
+        }
+      ]
+    },
+    {
+      "id": "gd_indie",
+      "text": "There are no resources, but the vision feels more important than resources.",
+      "heroState": "heroFrustrated",
+      "options": [
+        {
+          "label": "Work yourself to the bone to finish it alone",
+          "deathDelta": 2,
+          "next": "gd_crunch"
+        },
+        {
+          "label": "Gather a team of people just as obsessed",
+          "deathDelta": -1,
+          "ending": "gd_cult_classic_end"
+        },
+        {
+          "label": "Give up, unable to bear the uncertainty",
+          "deathDelta": -1,
+          "ending": "gd_abandoned_end"
+        },
+        {
+          "label": "Release a game with a message the authorities call illegal",
+          "deathDelta": 2,
+          "next": "prison_1"
+        }
+      ]
+    },
+    {
+      "id": "gd_crunch",
+      "text": "The project is almost done. You are not.",
+      "heroState": "heroCrying",
+      "options": [
+        {
+          "label": "Release the game at any cost",
+          "deathDelta": 2,
+          "ending": "gd_burnout_release_end"
+        },
+        {
+          "label": "Stop before it's too late",
+          "deathDelta": -2,
+          "ending": "gd_abandoned_end"
+        },
+        {
+          "label": "Seek refuge in faith, unable to bear the pressure",
+          "deathDelta": -1,
+          "next": "religion_1"
+        },
+        {
+          "label": "Get caught holding something illegal during the crunch",
+          "deathDelta": 2,
+          "next": "prison_1"
+        }
+      ]
+    },
+    {
+      "id": "gd_studio",
+      "text": "Stability exists, but the vision dissolves into other people's decisions.",
+      "heroState": "heroFrustrated",
+      "options": [
+        {
+          "label": "Give in and do as you're told",
+          "deathDelta": -1,
+          "ending": "gd_corporate_end"
+        },
+        {
+          "label": "Fight for your vision from inside the system",
+          "deathDelta": 1,
+          "ending": "gd_fight_end"
+        },
+        {
+          "label": "Climb the career ladder, forgetting about games",
+          "deathDelta": 1,
+          "next": "political_1"
+        }
+      ]
+    },
+    {
+      "id": "music_1",
+      "text": "The melody in your head demands to be heard.",
+      "heroState": "heroFocused",
+      "options": [
+        {
+          "label": "Play in underpasses and small clubs, honing your sound",
+          "deathDelta": 0,
+          "next": "music_underground"
+        },
+        {
+          "label": "Try to break into the big industry right away",
+          "deathDelta": 1,
+          "next": "music_industry"
+        }
+      ]
+    },
+    {
+      "id": "music_underground",
+      "text": "The audience is small, but real.",
+      "heroState": "heroFocused",
+      "options": [
+        {
+          "label": "Stay true to your sound, even without recognition",
+          "deathDelta": -1,
+          "ending": "music_authentic_end"
+        },
+        {
+          "label": "Break down one day from poverty and exhaustion",
+          "deathDelta": 2,
+          "ending": "music_burnout_end"
+        },
+        {
+          "label": "Write a song the authorities call a call to riot",
+          "deathDelta": 2,
+          "next": "prison_1"
+        }
+      ]
+    },
+    {
+      "id": "music_industry",
+      "text": "The industry is ready to make you a star — on its own terms.",
+      "heroState": "heroFrustrated",
+      "options": [
+        {
+          "label": "Agree to an image someone else invented",
+          "deathDelta": 1,
+          "next": "music_fame"
+        },
+        {
+          "label": "Refuse and stay yourself at the cost of your career",
+          "deathDelta": -1,
+          "ending": "music_authentic_end"
+        },
+        {
+          "label": "Use popularity as a springboard into power",
+          "deathDelta": 1,
+          "next": "political_1"
+        }
+      ]
+    },
+    {
+      "id": "music_fame",
+      "text": "Fame has arrived, but it doesn't quite belong to you.",
+      "heroState": "heroCrying",
+      "options": [
+        {
+          "label": "Play the part for as long as it works",
+          "deathDelta": 1,
+          "ending": "music_hollow_end"
+        },
+        {
+          "label": "Fail to cope with the pressure and collapse",
+          "deathDelta": 3,
+          "ending": "music_burnout_end"
+        },
+        {
+          "label": "Seek refuge in faith, trying to fight the addiction",
+          "deathDelta": -1,
+          "next": "religion_1"
+        },
+        {
+          "label": "Get caught red-handed",
+          "deathDelta": 2,
+          "next": "prison_1"
+        }
+      ]
+    },
+    {
+      "id": "cinema_1",
+      "text": "The shots assemble themselves in your head faster than the money for a camera appears.",
+      "heroState": "heroFocused",
+      "options": [
+        {
+          "label": "Shoot low-budget auteur films",
+          "deathDelta": -1,
+          "next": "cinema_indie"
+        },
+        {
+          "label": "Push into the big industry",
+          "deathDelta": 1,
+          "next": "cinema_industry"
+        }
+      ]
+    },
+    {
+      "id": "cinema_indie",
+      "text": "Festivals value boldness more than budget.",
+      "heroState": "heroFocused",
+      "options": [
+        {
+          "label": "Stay true to your authorial vision to the end",
+          "deathDelta": -1,
+          "ending": "cinema_auteur_end"
+        },
+        {
+          "label": "Spend years unable to find funding for the next film",
+          "deathDelta": 2,
+          "ending": "cinema_unmade_end"
+        },
+        {
+          "label": "Make a film the authorities call incitement",
+          "deathDelta": 2,
+          "next": "prison_1"
+        }
+      ]
+    },
+    {
+      "id": "cinema_industry",
+      "text": "The studio is ready to make your film — if it becomes their film.",
+      "heroState": "heroFrustrated",
+      "options": [
+        {
+          "label": "Compromise for the sake of distribution",
+          "deathDelta": 1,
+          "next": "cinema_commercial"
+        },
+        {
+          "label": "Walk off the set, defending your vision",
+          "deathDelta": -1,
+          "ending": "cinema_auteur_end"
+        },
+        {
+          "label": "Use industry connections to enter power",
+          "deathDelta": 1,
+          "next": "political_1"
+        }
+      ]
+    },
+    {
+      "id": "cinema_commercial",
+      "text": "The film hits theaters. It's no longer quite yours.",
+      "heroState": "heroCrying",
+      "options": [
+        {
+          "label": "Accept it, keep making films on these terms",
+          "deathDelta": 1,
+          "ending": "cinema_sellout_end"
+        },
+        {
+          "label": "Leave the profession, unable to bear the compromises",
+          "deathDelta": -1,
+          "ending": "cinema_unmade_end"
+        },
+        {
+          "label": "Seek relief in addiction, and later — in faith",
+          "deathDelta": -1,
+          "next": "religion_1"
+        },
+        {
+          "label": "Get caught red-handed on set",
+          "deathDelta": 2,
+          "next": "prison_1"
+        }
+      ]
+    },
+    {
+      "id": "lit_1",
+      "text": "The story inside you demands to be written down.",
+      "heroState": "heroFocused",
+      "options": [
+        {
+          "label": "Write what matters to you, without thinking about sales",
+          "deathDelta": -1,
+          "next": "lit_honest"
+        },
+        {
+          "label": "Write what sells",
+          "deathDelta": 1,
+          "next": "lit_commercial"
+        }
+      ]
+    },
+    {
+      "id": "lit_honest",
+      "text": "Publishers politely reject you, one after another.",
+      "heroState": "heroFrustrated",
+      "options": [
+        {
+          "label": "Keep writing for the drawer, no matter what",
+          "deathDelta": -1,
+          "ending": "lit_posthumous_end"
+        },
+        {
+          "label": "Give up one day and burn the manuscripts",
+          "deathDelta": 2,
+          "ending": "lit_burned_end"
+        },
+        {
+          "label": "Publish a work the authorities declare illegal",
+          "deathDelta": 2,
+          "next": "prison_1"
+        }
+      ]
+    },
+    {
+      "id": "lit_commercial",
+      "text": "The books sell, but they're not the ones you wanted to write.",
+      "heroState": "heroFrustrated",
+      "options": [
+        {
+          "label": "Keep writing under someone else's name for the money",
+          "deathDelta": 1,
+          "ending": "lit_ghostwriter_end"
+        },
+        {
+          "label": "Someday write the real book under your own name",
+          "deathDelta": -1,
+          "ending": "lit_posthumous_end"
+        },
+        {
+          "label": "Use your pen's fame to write speeches for those in power",
+          "deathDelta": 1,
+          "next": "political_1"
+        },
+        {
+          "label": "Seek refuge in faith, unable to bear the pressure of fame",
+          "deathDelta": -1,
+          "next": "religion_1"
+        }
+      ]
+    },
+    {
+      "id": "war_art_expression",
+      "text": "What can't be said out loud can sometimes be told another way.",
+      "heroState": "warFocused",
+      "options": [
+        {
+          "label": "Write a book about the war",
+          "deathDelta": -1,
+          "next": "lit_1"
+        },
+        {
+          "label": "Make a film about what you went through",
+          "deathDelta": -1,
+          "next": "cinema_1"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "id": "suppressed_kept_end",
+      "text": "You fade away slowly, alone, having never said what you needed to say.",
+      "heroState": "heroCrying"
+    },
+    {
+      "id": "suppressed_seen_end",
+      "text": "You die knowing that at least one person saw the real you.",
+      "heroState": "heroBasic"
+    },
+    {
+      "id": "suppressed_faded_end",
+      "text": "You're not found right away — the neighbors didn't notice the silence at first.",
+      "heroState": "heroCrying"
+    },
+    {
+      "id": "home_exhaust_end",
+      "text": "You collapse at some random construction site. No one even knows your name.",
+      "heroState": "heroCrying"
+    },
+    {
+      "id": "home_freeze_end",
+      "text": "You freeze under the open sky, in a city whose streets you never learned the names of.",
+      "heroState": "heroCrying"
+    },
+    {
+      "id": "criminal_caught_end",
+      "text": "A bullet finds you on the doorstep of one last job — the siren sounds too late to matter.",
+      "heroState": "heroFrustrated"
+    },
+    {
+      "id": "criminal_boss_end",
+      "text": "Your own people are standing nearby at the exact moment it's more convenient for you to be gone.",
+      "heroState": "heroFrustrated"
+    },
+    {
+      "id": "prison_free_end",
+      "text": "Years later you die at home, quietly, in your sleep — the freedom you once earned had simply become ordinary.",
+      "heroState": "heroBasic"
+    },
+    {
+      "id": "prison_informer_end",
+      "text": "Former cellmates find you first — before you manage to start a new life.",
+      "heroState": "prisonCrying"
+    },
+    {
+      "id": "prison_broken_end",
+      "text": "Your body walks free. Your heart stops a year later, quietly, in your sleep — part of you never really left the cell.",
+      "heroState": "heroCrying"
+    },
+    {
+      "id": "prison_collapse_end",
+      "text": "You don't survive another night — the body can't withstand what was done to it for too long.",
+      "heroState": "prisonCrying"
+    },
+    {
+      "id": "prison_survivors_end",
+      "text": "Years later you die at home, in your own bed — a rare luxury for someone who once shared the last scrap of food in a forest.",
+      "heroState": "heroBasic"
+    },
+    {
+      "id": "prison_cannibal_end",
+      "text": "You survive the forest. Years later your heart stops in your sleep — but your eyes never learned to close peacefully.",
+      "heroState": "heroCrying"
+    },
+    {
+      "id": "war_support_end",
+      "text": "The war ends without a single shot fired your way — but the question of what you would have done at the front never lets go, even decades later.",
+      "heroState": "warFocused"
+    },
+    {
+      "id": "war_hero_end",
+      "text": "Years later you're buried with honors — that day at the front became the defining moment of the life you lived afterward.",
+      "heroState": "warFocused"
+    },
+    {
+      "id": "war_fallen_end",
+      "text": "A bullet finds you before you can take the last step.",
+      "heroState": "warFocused"
+    },
+    {
+      "id": "war_conscience_end",
+      "text": "You die an old man, knowing for certain: that day, you did the right thing.",
+      "heroState": "warFocused"
+    },
+    {
+      "id": "war_court_end",
+      "text": "The court-martial leaves you no future, only a sentence carried out at dawn.",
+      "heroState": "warFrustrated"
+    },
+    {
+      "id": "war_collapse_end",
+      "text": "You don't survive what you became — the body can't carry the weight it held inside.",
+      "heroState": "warCrying"
+    },
+    {
+      "id": "war_healed_end",
+      "text": "Years later you die at home, finally at peace with what you once saw.",
+      "heroState": "warFocused"
+    },
+    {
+      "id": "war_silent_end",
+      "text": "Years later, the war still hasn't let go. Your heart stops quietly, in your sleep.",
+      "heroState": "warCrying"
+    },
+    {
+      "id": "business_soulless_end",
+      "text": "You choke on a bone from an exquisite fish at dinner on your own yacht — there's no one nearby who'd know what to do.",
+      "heroState": "businessFrustrated"
+    },
+    {
+      "id": "business_legacy_end",
+      "text": "You die at home, surrounded by those you passed on not just the business, but the name.",
+      "heroState": "businessFocused"
+    },
+    {
+      "id": "business_ruin_end",
+      "text": "The scandal takes everything down to the last item. Your heart can't survive the first truly cold winter with no heating.",
+      "heroState": "businessFrustrated"
+    },
+    {
+      "id": "political_zenith_end",
+      "text": "A bullet finds you exactly where you least expected it — among the people you considered your own.",
+      "heroState": "powerFocused"
+    },
+    {
+      "id": "political_fallen_end",
+      "text": "The scandal ends your career in a single night. Your heart can't survive the first day without a guard at the door.",
+      "heroState": "powerCrying"
+    },
+    {
+      "id": "political_survivor_end",
+      "text": "You die in office, at a respectable age — only you ever knew the price of the compromises.",
+      "heroState": "powerFocused"
+    },
+    {
+      "id": "political_exposed_end",
+      "text": "A crowd outside the courthouse — the last thing you see before your heart stops from shame and strain.",
+      "heroState": "powerCrying"
+    },
+    {
+      "id": "science_legacy_end",
+      "text": "Your heart stops at work, in the middle of an unfinished project — one that others will finish, citing your name.",
+      "heroState": "heroFocused"
+    },
+    {
+      "id": "science_unfinished_end",
+      "text": "Years of work break off mid-sentence in a lab notebook.",
+      "heroState": "heroCrying"
+    },
+    {
+      "id": "science_wealthy_end",
+      "text": "You die in the comfort you built for yourself — quietly, in your sleep, in your own home.",
+      "heroState": "heroBasic"
+    },
+    {
+      "id": "science_regret_end",
+      "text": "You die never having forgiven yourself for what your discovery became.",
+      "heroState": "heroCrying"
+    },
+    {
+      "id": "sports_mentor_end",
+      "text": "You die at home, surrounded by students who long surpassed you — and that's the only thing that matters.",
+      "heroState": "heroBasic"
+    },
+    {
+      "id": "sports_drink_end",
+      "text": "The body can't withstand what you used to try to drown out the emptiness.",
+      "heroState": "heroCrying"
+    },
+    {
+      "id": "family_peaceful_end",
+      "text": "You fall asleep and don't wake up — in a house full of people who will miss you.",
+      "heroState": "heroBasic"
+    },
+    {
+      "id": "family_lost_self_end",
+      "text": "You die never having found out who you might have become outside that house.",
+      "heroState": "heroCrying"
+    },
+    {
+      "id": "family_regret_end",
+      "text": "You die on the road, never having decided what exactly you were running from all those years.",
+      "heroState": "heroCrying"
+    },
+    {
+      "id": "religion_saint_end",
+      "text": "You die among those you served your whole life — they will remember your name longer than you remembered it yourself.",
+      "heroState": "heroBasic"
+    },
+    {
+      "id": "religion_doubt_end",
+      "text": "You die with a question you never got an answer to.",
+      "heroState": "heroCrying"
+    },
+    {
+      "id": "religion_peace_end",
+      "text": "You die quietly, in a familiar ritual, without fear and without an answer — just with peace.",
+      "heroState": "heroBasic"
+    },
+    {
+      "id": "religion_lost_end",
+      "text": "You die feeling an emptiness where there used to be at least something.",
+      "heroState": "heroCrying"
+    },
+    {
+      "id": "emigration_second_life_end",
+      "text": "After years of quiet life, your heart stops in your sleep, in a home that finally became yours.",
+      "heroState": "heroBasic"
+    },
+    {
+      "id": "emigration_broken_end",
+      "text": "You're found too late — frozen in an apartment with no heating, because there was no one left to pay for it.",
+      "heroState": "heroCrying"
+    },
+    {
+      "id": "emigration_legalized_end",
+      "text": "Years later, now legal, your body gives in to the strain that had been building the whole time.",
+      "heroState": "heroFocused"
+    },
+    {
+      "id": "emigration_exploited_end",
+      "text": "You collapse at the machine. The work won't stop for even a day.",
+      "heroState": "heroCrying"
+    },
+    {
+      "id": "emigration_shadow_end",
+      "text": "You grew rich on something that can't survive daylight — and you die the same way, far from it.",
+      "heroState": "heroFrustrated"
+    },
+    {
+      "id": "gd_cult_classic_end",
+      "text": "The game ships and finds its small, devoted following — you die an old man, still answering letters from fans.",
+      "heroState": "heroFocused"
+    },
+    {
+      "id": "gd_abandoned_end",
+      "text": "The project stays a folder on an old drive. You die without ever opening it again.",
+      "heroState": "heroCrying"
+    },
+    {
+      "id": "gd_burnout_release_end",
+      "text": "The game launches the same day your heart stops at your desk — you never get to read the reviews.",
+      "heroState": "heroCrying"
+    },
+    {
+      "id": "gd_corporate_end",
+      "text": "You die comfortably retired, looking at a game whose credits list your name as one of fifty.",
+      "heroState": "heroFrustrated"
+    },
+    {
+      "id": "gd_fight_end",
+      "text": "You die never having broken the system completely — but something of what you envisioned survived in the final game.",
+      "heroState": "heroFocused"
+    },
+    {
+      "id": "music_authentic_end",
+      "text": "You perform into deep old age for a small but devoted crowd — and slip away quietly, soon after your last show.",
+      "heroState": "heroFocused"
+    },
+    {
+      "id": "music_burnout_end",
+      "text": "An overdose finds you before the next song does.",
+      "heroState": "heroCrying"
+    },
+    {
+      "id": "music_hollow_end",
+      "text": "You die at the peak of fame, surrounded by people who know the image, not you.",
+      "heroState": "heroCrying"
+    },
+    {
+      "id": "cinema_auteur_end",
+      "text": "You keep filming until the very end — the camera by your bed, even when you have strength for only one shot a day.",
+      "heroState": "heroFocused"
+    },
+    {
+      "id": "cinema_unmade_end",
+      "text": "You die with a folder of unrealized scripts on your desk — not one of them ever became a film.",
+      "heroState": "heroCrying"
+    },
+    {
+      "id": "cinema_sellout_end",
+      "text": "You die wealthy and forgotten — no one remembers the last film with your name on it.",
+      "heroState": "heroCrying"
+    },
+    {
+      "id": "lit_posthumous_end",
+      "text": "Your main book is found and published only after your death — the one that made all the writing worthwhile.",
+      "heroState": "heroFocused"
+    },
+    {
+      "id": "lit_burned_end",
+      "text": "The ashes of the manuscripts are all that's left of what you wanted to tell the world.",
+      "heroState": "heroCrying"
+    },
+    {
+      "id": "lit_ghostwriter_end",
+      "text": "You die the author of dozens of names on other people's covers, and not one of your own.",
+      "heroState": "heroCrying"
+    },
+    {
+      "id": "caught_by_death",
+      "text": "Your heart stops in the middle of the street. No one even gets the chance to ask what happened.",
+      "heroState": "heroCrying"
+    }
+  ]
+}

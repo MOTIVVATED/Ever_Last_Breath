@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public PendulumController pendulum;
     public ProgressBarController progressBar;
     public GameOverUIController gameOverUI;
-    public Animator heroAnimator;
+    public HeroAnimatorController heroAnimator;
 
     public GameObject optionsContainerRoot;
     public GameObject pendulumRoot;
@@ -128,6 +128,6 @@ public class GameManager : MonoBehaviour
 
     private void PlayHeroState(string heroState)
     {
-        heroAnimator.Play("hero" + heroState);
+        heroAnimator.SetState(heroState);
     }
 }
