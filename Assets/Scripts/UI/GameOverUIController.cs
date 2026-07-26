@@ -18,6 +18,9 @@ public class GameOverUIController : MonoBehaviour
     {
         panel.SetActive(true);
         endingText.text = text;
+
+        TextMeshProUGUI restartButtonText = restartButton.GetComponentInChildren<TextMeshProUGUI>();
+        restartButtonText.text = LocalizationManager.CurrentLanguage == "ru" ? "Заново" : "Restart";
     }
 
     public void Restart()
