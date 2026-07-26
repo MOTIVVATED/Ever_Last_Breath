@@ -64,6 +64,7 @@ public class StartScreenController : MonoBehaviour
     {
         if (IntroAlreadyShown)
         {
+            Cursor.visible = false;
             languagePanel.SetActive(false);
             panelRoot.SetActive(false);
             graphLoader.LoadGraph();
@@ -131,6 +132,7 @@ public class StartScreenController : MonoBehaviour
 
     private void BeginGame()
     {
+        Cursor.visible = false;
         IntroAlreadyShown = true;
         panelRoot.SetActive(false);
         gameManager.BeginGame();

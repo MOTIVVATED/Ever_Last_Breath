@@ -115,6 +115,7 @@ public class GameManager : MonoBehaviour
     private void TriggerGameOver(string reason)
     {
         isGameOver = true;
+        Cursor.visible = true;
 
         optionsContainerRoot.SetActive(false);
         pendulumRoot.SetActive(false);
